@@ -18,9 +18,17 @@
     "url": "https://github.com/woon5796/wallace-ui/issues"
   },
   "homepage": "https://github.com/woon5796/wallace-ui#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
     "@types/webpack-dev-server": "^4.5.0",
+    "babel-loader": "^8.2.3",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1",
