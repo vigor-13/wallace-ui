@@ -13,7 +13,7 @@ module.exports = {
     rules: [
       // Babel 설정
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx|ts|tsx)$/,    
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -22,6 +22,7 @@ module.exports = {
               '@babel/preset-react',
               '@babel/preset-env',
               '@babel/preset-typescript',
+              '@emotion/babel-preset-css-prop',
             ],
             plugins: ['@babel/plugin-transform-runtime'],
           },

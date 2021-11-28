@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
-import './style.css';
+import { css } from '@emotion/react';
+
+const style = css`
+  color: blue;
+`;
 
 const App: FC = () => {
-  return <h1>React!</h1>;
+  return <h1 css={style}>React!</h1>;
 };
 
 export default App;
