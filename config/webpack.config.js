@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -8,12 +9,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
     }),
+    // new ESLintWebpackPlugin(),
   ],
   module: {
     rules: [
       // Babel 설정
       {
-        test: /\.(js|jsx|ts|tsx)$/,    
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
