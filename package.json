@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./config/webpack.config.js",
-    "start": "webpack serve --config ./config/webpack.config.js"
+    "start": "webpack serve --config ./config/webpack.config.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,11 @@
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@storybook/addon-actions": "^6.4.0",
+    "@storybook/addon-essentials": "^6.4.0",
+    "@storybook/addon-links": "^6.4.0",
+    "@storybook/cli": "^6.4.0",
+    "@storybook/react": "^6.4.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "@types/webpack-dev-server": "^4.5.0",
