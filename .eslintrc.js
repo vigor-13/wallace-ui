@@ -9,6 +9,7 @@ module.exports = {
     'prettier',
     'plugin:react/recommended',
     'plugin:import/typescript',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -20,7 +21,12 @@ module.exports = {
   },
   plugins: ['prettier', 'react', '@typescript-eslint'],
   rules: {
-    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -31,11 +37,12 @@ module.exports = {
         tsx: 'never',
       },
     ],
-
     // React rules
     'react/jsx-filename-extension': [
       1,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+      {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     ],
     'react/function-component-definition': [
       2,
