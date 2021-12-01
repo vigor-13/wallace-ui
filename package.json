@@ -14,7 +14,8 @@
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "atom": "yarn workspace @wallace-ui/atom"
+    "atom": "yarn workspace @wallace-ui/atom",
+    "system": "yarn workspace @wallace-ui/system"
   },
   "repository": {
     "type": "git",
