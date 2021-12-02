@@ -12,5 +12,6 @@
   "dependencies": {
     "@wallace-ui/system": "0.1.0",
     "react": "^17.0.2"
-  }
+  },
+  "devDependencies": {}
 }
