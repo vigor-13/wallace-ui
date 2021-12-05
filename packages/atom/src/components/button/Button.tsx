@@ -1,8 +1,8 @@
 import React from 'react';
-import { forwardRef } from '@wallace-ui/system';
+import { forwardRef, wallace } from '@wallace-ui/system';
 
 export const Button = forwardRef<{}, 'button'>((props, ref) => {
-  return <button>test</button>;
+  return <wallace.button>test</wallace.button>;
 });
 
 Button.displayName = 'Button';

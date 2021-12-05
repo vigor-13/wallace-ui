@@ -1,23 +1,110 @@
 import React from 'react';
+import { Interpolation } from '@emotion/react';
+import {
+  StyleProps,
+  ResponsiveValue,
+  SystemStyleObject,
+} from '@wallace-ui/styled-system';
 
 /**
+ * wallace-ui 컴포넌트에서 사용가능한 프로퍼티 정의
+ */
+export interface WallaceProps extends StyleProps {
+  /**
+   * true 값일 경우 (뷰포트나 maxWidth 값을 초과하면) ellipsis를 적용하여 렌더링한다.
+   */
+  isTruncated?: boolean;
+
+  /**
+   * Used to truncate text at a specific number of lines
+   */
+  noOfLines?: ResponsiveValue<number>;
+
+  /**
+   * Used for internal css management
+   * @private
+   */
+  __css?: any;
+
+  /**
+   * Used to pass theme-aware style props.
+   * NB: This is the public API for user-land
+   */
+  sx?: SystemStyleObject;
+
+  /**
+   * emotion 스타일 객체
+   */
+  css?: Interpolation<{}>;
+}
+
+/**
+ * ???
+ * 리액트 컴포넌트를 받거나 리턴하는 함수를 표현한다.
  * React.ElementType (React.ComponentType + string):
- * \ This is the type you want to use for functions that receive or
- * \ return React components such as higher-order components or other
- * \ utilities.
+ * This is the type you want to use for functions that receive or
+ * return React components such as higher-order components or other
+ * utilities.
  */
 export type As<Props = any> = React.ElementType<Props>;
 
+/**
+ * ???
+ */
 export type PropsOf<T extends As> = React.ComponentPropsWithoutRef<T> & {
   as?: As;
 };
 
+/**
+ * ???
+ */
 export type OmitCommonProps<
   Target,
   OmitAdditionalProps extends keyof any = never
 > = Omit<Target, 'transition' | 'as' | 'color' | OmitAdditionalProps>;
 
+/**
+ * ???
+ */
 export type RightJoinProps<
   SourceProps extends object = {},
   OverrideProps extends object = {}
 > = OmitCommonProps<SourceProps, keyof OverrideProps> & OverrideProps;
+
+/**
+ * ???
+ * 기존 프로퍼티에 추가 프로퍼티 오버라이드 후 as 추가
+ */
+export type MergeWithAs<
+  ComponentProps extends object,
+  AsProps extends object,
+  AddtionalProps extends object = {},
+  AsComponent extends As = As
+> = RightJoinProps<ComponentProps, AddtionalProps> &
+  RightJoinProps<AsProps, AddtionalProps> & { as?: AsComponent };
+
+/**
+ * ???
+ */
+export type ComponentWithAs<Component extends As, Props extends object = {}> = {
+  <AsComponent extends As>(
+    props: MergeWithAs<
+      React.ComponentProps<Component>,
+      React.ComponentProps<AsComponent>,
+      Props,
+      AsComponent
+    >
+  ): JSX.Element;
+  displayName?: string;
+  propTypes?: React.WeakValidationMap<any>;
+  contextTypes?: React.ValidationMap<any>;
+  defaultProps?: Partial<any>;
+  id?: string;
+};
+
+/**
+ * wallace-ui 전용 컴포넌트 정의
+ * 컴포넌트와 프로퍼티를 받고 차크라 프로퍼티와 함께 머지해줌
+ */
+export interface WallaceComponent<T extends As, P = {}>
+  extends ComponentWithAs<T, WallaceProps & P> {}
