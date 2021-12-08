@@ -72,8 +72,9 @@ export type RightJoinProps<
 > = OmitCommonProps<SourceProps, keyof OverrideProps> & OverrideProps;
 
 /**
- * ???
- * 기존 프로퍼티에 추가 프로퍼티 오버라이드 후 as 추가
+ * 컴포넌트 프로퍼티 +
+ * 베이스 엘리먼트의 jsx attribute +
+ * as로 변환한 엘리먼트의 jsx attribute
  */
 export type MergeWithAs<
   ComponentProps extends object,
@@ -87,7 +88,7 @@ export type MergeWithAs<
  * ???
  */
 export type ComponentWithAs<Component extends As, Props extends object = {}> = {
-  <AsComponent extends As>(
+  <AsComponent extends As>( // as 프로퍼티를 사용할 경우 해당 엘리먼트의 jsx attribute를 가져오기 위해서 제네릭으로 구분한다.
     props: MergeWithAs<
       React.ComponentProps<Component>,
       React.ComponentProps<AsComponent>,
