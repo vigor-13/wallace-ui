@@ -7,7 +7,7 @@ import {
 } from '@wallace-ui/styled-system';
 
 /**
- * wallace-ui 컴포넌트에서 사용가능한 프로퍼티 정의
+ * wallace-ui 컴포넌트에서 사용할 공통 프로퍼티 정의
  */
 export interface WallaceProps extends StyleProps {
   /**
@@ -39,7 +39,11 @@ export interface WallaceProps extends StyleProps {
 }
 
 /**
- * ???
+ * 테마 관련 프로퍼티 정의
+ */
+export interface ThemingProps<ThemeComponent extends string = string> {}
+
+/**
  * 리액트 컴포넌트를 받거나 리턴하는 함수를 표현한다.
  * React.ElementType (React.ComponentType + string):
  * This is the type you want to use for functions that receive or
@@ -49,7 +53,7 @@ export interface WallaceProps extends StyleProps {
 export type As<Props = any> = React.ElementType<Props>;
 
 /**
- * ???
+ * 대상 컴포넌트에서 ref 속성을 제외한 나머지 속성 추출
  */
 export type PropsOf<T extends As> = React.ComponentPropsWithoutRef<T> & {
   as?: As;
