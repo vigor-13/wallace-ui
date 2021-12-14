@@ -21,7 +21,7 @@ export interface WallaceProps extends StyleProps {
   noOfLines?: ResponsiveValue<number>;
 
   /**
-   * Used for internal css management
+   * 내부 css 관리에 사용된다.
    * @private
    */
   __css?: any;

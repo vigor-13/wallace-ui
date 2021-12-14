@@ -11,8 +11,9 @@ export interface ButtonOptions {
    * HTML button 타입 옵션
    */
   type?: 'button' | 'reset' | 'submit';
+
   /**
-   * true 값이면 버튼 비활성화
+   * 버튼 비활성화 옵션 (true면 비활성화)
    */
   isDisabled?: boolean;
 }
@@ -22,7 +23,7 @@ export interface ButtonProps
     ThemingProps<'Button'> {}
 
 export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
-  return <wallace.button>test</wallace.button>;
+  return <wallace.button __css={{ background: 'red' }}>test</wallace.button>;
 });
 
 Button.displayName = 'Button';
