@@ -5,6 +5,7 @@ import { SystemStyleObject, StyleProps } from '@wallace-ui/styled-system';
 import { shouldForwardProp } from './should-forward-prop';
 import React from 'react';
 import { WallaceProps } from '.';
+import { Dict } from '@wallace-ui/utils';
 
 /**
  * ### [Type] HTMLWallaceProps
@@ -79,7 +80,7 @@ export const toCSSObject: GetStyleObject =
     const { theme, css: cssProp, __css, sx, ...rest } = props;
     // TODO: ... baseStyle 처리 로직 미구현
     const finalStyles = Object.assign({}, __css, sx); // TODO: ...
-    const computedCSS = finalStyles; // TODO: ...
+    const computedCSS = finalStyles as Dict<any>; // TODO: ...
     return cssProp ? [computedCSS, cssProp] : computedCSS;
   };
 

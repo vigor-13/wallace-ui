@@ -24,7 +24,7 @@ export interface WallaceProps extends StyleProps {
    * 내부 css 관리에 사용된다.
    * @private
    */
-  __css?: any;
+  __css?: SystemStyleObject;
 
   /**
    * Used to pass theme-aware style props.
