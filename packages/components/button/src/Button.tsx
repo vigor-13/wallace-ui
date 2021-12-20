@@ -23,7 +23,7 @@ export interface ButtonProps
     ThemingProps<'Button'> {}
 
 export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
-  return <wallace.button __css={{ background: 'red' }}>test</wallace.button>;
+  return <wallace.button>test</wallace.button>;
 });
 
 Button.displayName = 'Button';

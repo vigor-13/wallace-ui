@@ -19,6 +19,7 @@ import {
   transition,
   typography,
 } from './config';
+import { pseudoPropNames, pseudoSelectors } from './pseudos';
 
 /**
  * ???
@@ -48,4 +49,17 @@ export const systemPorps = mergeWith(
 /**
  * ???
  */
-export const propNames = [...objectKeys(systemPorps)];
+export const propNames = [...objectKeys(systemPorps), ...pseudoPropNames];
+
+/**
+ * ???
+ */
+const styleProps = { ...systemPorps, ...pseudoSelectors };
+
+/**
+ * [Function] isStyleProp
+ *
+ * @param prop
+ * @returns
+ */
+export const isStyleProp = (prop: string) => prop in styleProps;

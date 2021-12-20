@@ -1,11 +1,15 @@
+import _styled, { CSSObject, FunctionInterpolation } from '@emotion/styled';
+import {
+  SystemStyleObject,
+  StyleProps,
+  isStyleProp,
+} from '@wallace-ui/styled-system';
+import { Dict, filterUndefined, objectFilter, runIfFn } from '@wallace-ui/utils';
 import { As, WallaceComponent, PropsOf } from './system.types';
 import { DOMElement, domElements } from './system.utils';
-import _styled, { CSSObject, FunctionInterpolation } from '@emotion/styled';
-import { SystemStyleObject, StyleProps } from '@wallace-ui/styled-system';
 import { shouldForwardProp } from './should-forward-prop';
 import React from 'react';
 import { WallaceProps } from '.';
-import { Dict } from '@wallace-ui/utils';
 
 /**
  * ### [Type] HTMLWallaceProps
@@ -78,8 +82,15 @@ export const toCSSObject: GetStyleObject =
   ({ baseStyle }) =>
   (props) => {
     const { theme, css: cssProp, __css, sx, ...rest } = props;
-    // TODO: ... baseStyle 처리 로직 미구현
-    const finalStyles = Object.assign({}, __css, sx); // TODO: ...
+    const styleProps = objectFilter(rest, (_, prop) => isStyleProp(prop));
+    const finalBaseStyle = runIfFn(baseStyle, props);
+    const finalStyles = Object.assign(
+      {},
+      __css,
+      finalBaseStyle,
+      filterUndefined(styleProps),
+      sx
+    );
     const computedCSS = finalStyles as Dict<any>; // TODO: ...
     return cssProp ? [computedCSS, cssProp] : computedCSS;
   };
@@ -131,5 +142,12 @@ export type HTMLWallaceComponents = {
  */
 export const wallace = styled as unknown as WallaceFactory & HTMLWallaceComponents;
 domElements.forEach((tag) => {
-  wallace[tag] = wallace(tag);
+  wallace[tag] = wallace(tag, {
+    baseStyle: () => {
+      return {
+        background: 'red',
+        padding: '10px',
+      };
+    },
+  });
 });

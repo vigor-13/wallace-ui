@@ -39,3 +39,20 @@ export type Union<T> = T | (string & {});
 export type Token<CSSType, ThemeKey = unknown> = ThemeKey extends keyof ThemeTypings
   ? ResponsiveValue<Union<CSSType | ThemeTypings[ThemeKey]>>
   : ResponsiveValue<CSSType>;
+
+// ???
+export type CSSMap = Dict<{ value: string; var: string; varRef: string }>;
+
+// ???
+export type WithCSSVar<T> = T & {
+  __cssVars: Dict;
+  __cssMap: CSSMap;
+  __breakpoints: any;
+};
+
+// ???
+export type CssTheme = WithCSSVar<{
+  breakpoints: Dict;
+  direction?: 'ltr' | 'rtl';
+  [key: string]: any;
+}>;

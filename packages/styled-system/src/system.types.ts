@@ -136,7 +136,13 @@ export type CSSObject = RecursiveCSSObject<CSSWithMultiValues>;
  */
 export type SystemStyleObject = CSSObject;
 
-/**
- * ???
- */
+// ???
+export interface FunctionCSSInterpolation {
+  (theme: Dict): CSSObject;
+}
+
+// ???
+export type StyleObjectOrFn = CSSObject | FunctionCSSInterpolation;
+
+// ???
 export interface SystemProps extends StyleProps, PseudoProps {}
