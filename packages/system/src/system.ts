@@ -10,6 +10,7 @@ import { DOMElement, domElements } from './system.utils';
 import { shouldForwardProp } from './should-forward-prop';
 import React from 'react';
 import { WallaceProps } from '.';
+import { css } from '@wallace-ui/styled-system/src/css';
 
 /**
  * ### [Type] HTMLWallaceProps
@@ -91,7 +92,7 @@ export const toCSSObject: GetStyleObject =
       filterUndefined(styleProps),
       sx
     );
-    const computedCSS = finalStyles as Dict<any>; // TODO: ...
+    const computedCSS = css(finalStyles)(props.theme);
     return cssProp ? [computedCSS, cssProp] : computedCSS;
   };
 

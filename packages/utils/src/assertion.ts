@@ -11,6 +11,14 @@ export function isNumeric(value: any) {
   return value != null && value - parseFloat(value) + 1 >= 0;
 }
 
+// String assertions
+export function isString(value: any): value is string {
+  return Object.prototype.toString.call(value) === '[object String]';
+}
+export function isCssVar(value: string): boolean {
+  return /^var\(--.+\)$/.test(value);
+}
+
 // Function assertions
 export function isFunction<T extends Function = Function>(value: any): value is T {
   return typeof value === 'function';
