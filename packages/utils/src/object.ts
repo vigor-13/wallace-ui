@@ -30,3 +30,14 @@ export function objectFilter<T extends Dict>(object: T, fn: FilterFn<T>) {
 
 export const filterUndefined = (object: Dict) =>
   objectFilter(object, (val) => val !== null && val !== undefined);
+
+/**
+ * Object.entries polyfill for Node-v10 compability
+ *
+ * @see [stack overflow](https://stackoverflow.com/questions/57379778/typescript-type-for-reduce)
+ */
+export const fromEntries = <T extends unknown>(entries: [string, any][]) =>
+  entries.reduce<Record<string, any>>((carry, [key, value]) => {
+    carry[key] = value;
+    return carry;
+  }, {}) as T;

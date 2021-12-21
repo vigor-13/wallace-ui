@@ -1,4 +1,4 @@
-import { Dict } from '@wallace-ui/utils';
+import { AnalyzeBreakpointsReturn, Dict } from '@wallace-ui/utils';
 import { ThemeTypings } from '../theming.types';
 
 /**
@@ -47,7 +47,7 @@ export type CSSMap = Dict<{ value: string; var: string; varRef: string }>;
 export type WithCSSVar<T> = T & {
   __cssVars: Dict;
   __cssMap: CSSMap;
-  __breakpoints: any;
+  __breakpoints: AnalyzeBreakpointsReturn;
 };
 
 // ???
