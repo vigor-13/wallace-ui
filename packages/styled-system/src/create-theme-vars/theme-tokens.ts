@@ -1,5 +1,9 @@
 /**
- * ???
+ * CSS 변수를 생성에 사용되는 (빌트인) 토큰들이다.
+ *
+ * @example
+ * --wallace-fontSizes-lg: '18px'
+ * --wallace-colors-gray-100: '#fafafa'
  */
 const tokens = [
   'colors',
@@ -21,7 +25,7 @@ const tokens = [
 ] as const;
 
 /**
- * ???
+ * CSS 변수 생성에 사용되는 토큰 타입이다.
  */
 export type ThemeScale =
   | typeof tokens[number]

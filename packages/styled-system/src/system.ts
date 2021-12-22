@@ -24,7 +24,7 @@ import { pseudoPropNames, pseudoSelectors } from './pseudos';
 /**
  * ???
  */
-export const systemPorps = mergeWith(
+export const systemProps = mergeWith(
   {},
   background,
   border,
@@ -49,12 +49,12 @@ export const systemPorps = mergeWith(
 /**
  * ???
  */
-export const propNames = [...objectKeys(systemPorps), ...pseudoPropNames];
+export const propNames = [...objectKeys(systemProps), ...pseudoPropNames];
 
 /**
  * ???
  */
-const styleProps = { ...systemPorps, ...pseudoSelectors };
+const styleProps = { ...systemProps, ...pseudoSelectors };
 
 /**
  * [Function] isStyleProp

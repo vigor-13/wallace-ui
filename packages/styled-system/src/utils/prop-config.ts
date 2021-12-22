@@ -1,6 +1,8 @@
 import * as CSS from 'csstype';
 import { Dict } from '@wallace-ui/utils';
 import { CssTheme, Transform } from '.';
+import { ThemeScale } from '../create-theme-vars';
+import { createTransform } from './create-transform';
 
 // ???
 type CSSProp = keyof CSS.Properties | (string & {});
@@ -21,6 +23,11 @@ export interface PropConfig {
   static?: Dict;
 
   /**
+   * The theme scale this maps to
+   */
+  scale?: ThemeScale;
+
+  /**
    * CSS property or CSS variable the prop maps to
    */
   property?: MaybeThemeFunction<MaybeArray<StringUnion<CSSProp>>>;
@@ -35,11 +42,23 @@ export interface PropConfig {
    * transform function returns theme aware styles
    */
   processResult?: boolean;
-
-  // TODO: ...
 }
 
 /**
  * ???
  */
 export type Config = Record<string, PropConfig | true>;
+
+// ???
+export function toConfig(scale: ThemeScale, transform?: Transform) {
+  // TODO: ...
+  return <T extends CSSProp>(property: T | T[]) => {
+    const result: PropConfig = { property, scale };
+    result.transform = createTransform({
+      scale,
+      transform,
+    });
+
+    return result;
+  };
+}

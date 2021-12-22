@@ -26,7 +26,7 @@ export type ResponsiveValue<T> = T | ResponsiveArray<T> | ResponsiveObject<T>;
 /**
  * ???
  */
-export type Transform = (value: any, theme: any, styles?: Dict) => any;
+export type Transform = (value: any, theme: CssTheme, styles?: Dict) => any;
 
 /**
  * ???
