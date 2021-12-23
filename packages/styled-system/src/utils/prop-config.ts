@@ -62,3 +62,26 @@ export function toConfig(scale: ThemeScale, transform?: Transform) {
     return result;
   };
 }
+
+// ???
+interface Opts {
+  scale?: ThemeScale;
+  property: { ltr: MaybeArray<CSSProp>; rtl: MaybeArray<CSSProp> };
+  transform?: Transform;
+}
+
+// ???
+const getRtl =
+  ({ rtl, ltr }: Opts['property']) =>
+  (theme: Dict) =>
+    theme.direction === 'rtl' ? rtl : ltr;
+
+// ???
+export function logical(options: Opts): PropConfig {
+  const { property, scale, transform } = options;
+  return {
+    scale,
+    property: getRtl(property),
+    transform: scale ? createTransform({ scale, compose: transform }) : transform,
+  };
+}
