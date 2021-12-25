@@ -1,5 +1,8 @@
 import { Dict } from './types';
 
+export const __DEV__ = process.env.NODE_ENV !== 'production';
+export const __TEST__ = process.env.NODE_ENV === 'test';
+
 // Number assertions
 export function isNumber(value: any): value is number {
   return typeof value === 'number';

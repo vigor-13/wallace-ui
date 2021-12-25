@@ -1,4 +1,5 @@
 import React from 'react';
+import { __DEV__ } from '@wallace-ui/utils';
 import {
   forwardRef,
   wallace,
@@ -23,7 +24,11 @@ export interface ButtonProps
     ThemingProps<'Button'> {}
 
 export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
-  return <wallace.button color='blue'>test</wallace.button>;
+  const { children } = props;
+
+  return <wallace.button>{children}</wallace.button>;
 });
 
-Button.displayName = 'Button';
+if (__DEV__) {
+  Button.displayName = 'Button';
+}

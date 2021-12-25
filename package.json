@@ -5,7 +5,8 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "packages/components/*"
+    "packages/components/*",
+    "tools/*"
   ],
   "preconstruct": {
     "packages": [
@@ -22,7 +23,8 @@
     "system": "yarn workspace @wallace-ui/system",
     "styled-system": "yarn workspace @wallace-ui/styled-system",
     "utils": "yarn workspace @wallace-ui/utils",
-    "ui-button": "yarn workspace @wallace-ui/button"
+    "ui-button": "yarn workspace @wallace-ui/button",
+    "test-utils": "yarn workspace @wallace-ui/test-utils"
   },
   "repository": {
     "type": "git",
@@ -41,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.0",
     "@storybook/addon-actions": "^6.4.1",
     "@storybook/addon-essentials": "^6.4.1",

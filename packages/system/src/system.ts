@@ -143,12 +143,5 @@ export type HTMLWallaceComponents = {
  */
 export const wallace = styled as unknown as WallaceFactory & HTMLWallaceComponents;
 domElements.forEach((tag) => {
-  wallace[tag] = wallace(tag, {
-    baseStyle: () => {
-      return {
-        background: 'red',
-        padding: '10px',
-      };
-    },
-  });
+  wallace[tag] = wallace(tag);
 });

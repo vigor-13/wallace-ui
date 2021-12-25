@@ -4,8 +4,6 @@
  */
 
 module.exports = {
-  watchPlugins: [
-    "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname",
-  ]
+  testEnvironment: 'jsdom',
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 };
