@@ -1,7 +1,153 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const border = {};
+export const border: Config = {
+  // border
+  border: t.borders('border'),
+  borderTop: t.borders('borderTop'),
+  borderBottom: t.borders('borderBottom'),
+  borderLeft: t.borders('borderLeft'),
+  borderRight: t.borders('borderRight'),
+  borderX: t.borders(['borderLeft', 'borderRight']),
+  borderY: t.borders(['borderTop', 'borderBottom']),
+  borderBlock: t.borders('borderBlock'),
+  borderInline: t.borders('borderInline'),
+  borderBlockStart: t.borders('borderBlockStart'),
+  borderBlockEnd: t.borders('borderBlockEnd'),
+  borderInlineStart: {
+    property: 'borderInlineStart',
+    scale: 'borders',
+  },
+  borderInlineEnd: t.borders('borderInlineEnd'),
+
+  // border-width
+  borderWidth: t.borderWidths('borderWidth'),
+  borderTopWidth: t.borderWidths('borderTopWidth'),
+  borderBottomWidth: t.borderWidths('borderBottomWidth'),
+  borderLeftWidth: t.borderWidths('borderLeftWidth'),
+  borderRightWidth: t.borderWidths('borderRightWidths'),
+  borderBlockStartWidth: t.borderWidths('borderBlockStartWidth'),
+  borderBlockEndWidth: t.borderWidths('borderBlockEndWidth'),
+  borderInlineStartWidth: t.borderWidths('borderInlineStartWidth'),
+  borderInlineEndWidth: t.borderWidths('borderInlineEndWidth'),
+
+  // border-style
+  borderStyle: t.borderStyles('borderStyle'),
+  borderTopStyle: t.borderStyles('borderTopStyle'),
+  borderBottomStyle: t.borderStyles('borderBottomStyle'),
+  borderLeftStyle: t.borderStyles('borderLeftStyle'),
+  borderRightStyle: t.borderStyles('borderRightStyle'),
+  borderBlockStartStyle: t.borderStyles('borderBlockStartStyle'),
+  borderBlockEndStyle: t.borderStyles('borderBlockEndStyle'),
+  borderInlineStartStyle: t.borderStyles('borderInlineStartStyle'),
+  borderInlineEndStyle: t.borderStyles('borderInlineEndStyle'),
+
+  // border-color
+  borderColor: t.colors('borderColor'),
+  borderTopColor: t.colors('borderTopColor'),
+  borderBottomColor: t.colors('borderBottomColor'),
+  borderLeftColor: t.colors('borderLeftColor'),
+  borderRightColor: t.colors('borderRightColor'),
+  borderBlockStartColor: t.colors('borderBlockStartColor'),
+  borderBlockEndColor: t.colors('borderBlockEndColor'),
+  borderInlineStartColor: t.colors('borderInlineStartColor'),
+  borderInlineEndColor: t.colors('borderInlineEndColor'),
+
+  // border-radius
+  borderRadius: t.radii('borderRadius'),
+  borderTopRadius: t.radii(['borderTopLeftRadius', 'borderTopRightRadius']),
+  borderBottomRadius: t.radii(['borderBottomLeftRadius', 'borderBottomRightRadius']),
+  borderLeftRadius: t.radii(['borderTopLeftRadius', 'borderBottomLeftRadius']),
+  borderRightRadius: t.radii(['borderTopRightRadius', 'borderBottomRightRadius']),
+  borderTopLeftRadius: t.radii('borderTopLeftRadius'),
+  borderTopRightRadius: t.radii('borderTopRightRadius'),
+  borderBottomLeftRadius: t.radii('borderBottomLeftRadius'),
+  borderBottomRightRadius: t.radii('borderBottomRightRadius'),
+  borderStartStartRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: 'borderTopLeftRadius',
+      rtl: 'borderTopRightRadius',
+    },
+  }),
+  borderStartEndRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: 'borderTopRightRadius',
+      rtl: 'borderTopLeftRadius',
+    },
+  }),
+  borderEndStartRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: 'borderBottomLeftRadius',
+      rtl: 'borderBottomRightRadius',
+    },
+  }),
+  borderEndEndRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: 'borderBottomRightRadius',
+      rtl: 'borderBottomLeftRadius',
+    },
+  }),
+  borderInlineStartRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+      rtl: ['borderTopRightRadius', 'borderBottomRightRadius'],
+    },
+  }),
+  borderInlineEndRadius: t.logical({
+    scale: 'radii',
+    property: {
+      ltr: ['borderTopRightRadius', 'borderBottomRightRadius'],
+      rtl: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
+    },
+  }),
+};
+
+Object.assign(border, {
+  // border
+  borderStart: border.borderInlineStart,
+  borderEnd: border.borderInlineEnd,
+
+  // border-color
+  borderStartColor: border.borderInlineStartColor,
+  borderEndColor: border.borderInlineEndColor,
+
+  // border-style
+  borderStartStyle: border.borderInlineStartStyle,
+  borderEndStyle: border.borderInlineEndStyle,
+
+  // border-width
+  borderStartWidth: border.borderInlineStartWidth,
+  borderEndWidth: border.borderInlineEndWidth,
+
+  // border-radius
+  borderStartRadius: border.borderInlineStartRadius,
+  borderEndRadius: border.borderInlineEndRadius,
+  borderTopStartRadius: border.borderStartStartRadius,
+  borderTopEndRadius: border.borderStartEndRadius,
+  borderBottomStartRadius: border.borderEndStartRadius,
+  borderBottomEndRadius: border.borderEndEndRadius,
+  rounded: border.borderRadius,
+  roundedTop: border.borderTopRadius,
+  roundedBottom: border.borderBottomRadius,
+  roundedLeft: border.borderLeftRadius,
+  roundedRight: border.borderRightRadius,
+  roundedStart: border.borderInlineStartRadius,
+  roundedEnd: border.borderInlineEndRadius,
+  roundedTopLeft: border.borderTopLeftRadius,
+  roundedTopRight: border.borderTopRightRadius,
+  roundedBottomLeft: border.borderBottomLeftRadius,
+  roundedBottomRight: border.borderBottomRightRadius,
+  roundedTopStart: border.borderStartStartRadius,
+  roundedTopEnd: border.borderStartEndRadius,
+  roundedBottomStart: border.borderEndStartRadius,
+  roundedBottomEnd: border.borderEndEndRadius,
+});
 
 /**
  * border 관련 프로퍼티

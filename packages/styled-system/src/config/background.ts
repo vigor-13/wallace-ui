@@ -1,7 +1,31 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token, transforms } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const background = {};
+export const background: Config = {
+  background: t.colors('background'),
+  backgroundColor: t.colors('backgroundColor'),
+  backgroundImage: t.propT('backgroundImage', transforms.bgImage),
+  backgroundSize: true,
+  backgroundPosition: true,
+  backgroundRepeat: true,
+  backgroundAttachment: true,
+  backgroundClip: { transform: transforms.bgClip },
+  bg: t.colors('background'),
+  bgColor: t.colors('backgroundColor'),
+  bgSize: t.prop('backgroundSize'),
+  bgPosition: t.prop('backgroundPosition'),
+  bgPos: t.prop('backgroundPosition'),
+  bgRepeat: t.prop('backgroundRepeat'),
+  bgAttachment: t.prop('backgroundAttachment'),
+  bgGradient: t.propT('backgroundImage', transforms.gradient),
+  bgClip: { transform: transforms.bgClip },
+};
+
+Object.assign(background, {
+  bgImage: background.backgroundImage,
+  bgImg: background.backgroundImage,
+});
 
 export interface BackgroundProps {
   /**

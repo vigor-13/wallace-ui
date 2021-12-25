@@ -1,7 +1,15 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const effect = {};
+export const effect: Config = {
+  boxShadow: t.shadows('boxShadow'),
+  mixBlendMode: true,
+  blendMode: t.prop('mixBlendMode'),
+  backgroundBlendMode: true,
+  bgBlendMode: t.prop('backgroundBlendMode'),
+  opacity: true,
+};
 
 export interface EffectProps {
   /***************************

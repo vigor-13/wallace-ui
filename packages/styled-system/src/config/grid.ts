@@ -1,7 +1,26 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const grid = {};
+export const grid: Config = {
+  gridGap: t.space('gridGap'),
+  gridColumnGap: t.space('gridColumnGap'),
+  gridRowGap: t.space('gridRowGap'),
+  gridColumn: true,
+  gridRow: true,
+  gridAutoFlow: true,
+  girdAutoColumns: true,
+  gridColumnStart: true,
+  gridColumnEnd: true,
+  gridRowStart: true,
+  gridRowEnd: true,
+  gridAutoRows: true,
+  gridTemplate: true,
+  gridTemplateColumns: true,
+  gridTemplateRows: true,
+  gridTemplateAreas: true,
+  gridArea: true,
+};
 
 export interface GridProps {
   /********************************

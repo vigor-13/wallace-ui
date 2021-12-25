@@ -1,7 +1,42 @@
 import * as CSS from 'csstype';
-import { Token, ResponsiveValue } from '../utils';
+import { Token, ResponsiveValue, t, transforms } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const typography = {};
+export const typography: Config = {
+  fontFamily: t.prop('fontFamily', 'fonts'),
+  fontSize: t.prop('fontSize', 'fontSizes', transforms.px),
+  fontWeight: t.prop('fontWeight', 'fontWeights'),
+  lineHeight: t.prop('lineHeight', 'lineHeights'),
+  letterSpacing: t.prop('letterSpacing', 'letterSpacings'),
+  textAlign: true,
+  fontStyle: true,
+  wordBreak: true,
+  overflowWrap: true,
+  textOverflow: true,
+  textTransform: true,
+  whiteSpace: true,
+  noOfLines: {
+    static: {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      display: '-webkit-box',
+      WebkitBoxOrient: 'vertical',
+      WebkitLineClamp: 'var(--wallace-line-clamp)',
+    },
+    property: '--wallace-line-clamp',
+  },
+  isTruncated: {
+    transform(value) {
+      if (value === true) {
+        return {
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        };
+      }
+    },
+  },
+};
 
 export interface TypographyProps {
   /**

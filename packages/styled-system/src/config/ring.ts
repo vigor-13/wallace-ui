@@ -1,7 +1,14 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, transforms, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const ring = {};
+export const ring: Config = {
+  ring: { transform: transforms.ring },
+  ringColor: t.colors('--wallace-ring-color'),
+  ringOffset: t.prop('--wallace-ring-offset-width'),
+  ringOffsetColor: t.colors('--wallace-ring-offset-color'),
+  ringInset: t.prop('--wallace-ring-inset'),
+};
 
 export interface RingProps {
   /**

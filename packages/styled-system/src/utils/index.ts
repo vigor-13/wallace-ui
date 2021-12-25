@@ -15,7 +15,7 @@ export const t = {
   space: toConfig('space', transforms.px),
   spaceT: toConfig('space', transforms.px),
   sizes: toConfig('sizes', transforms.px),
-  sziesT: toConfig('sizes', transforms.fraction),
+  sizesT: toConfig('sizes', transforms.fraction),
   shadows: toConfig('shadows'),
   blur: toConfig('blur', transforms.blur),
   logical,

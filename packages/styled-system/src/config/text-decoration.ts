@@ -1,7 +1,17 @@
 import * as CSS from 'csstype';
-import { Token, ResponsiveValue } from '../utils';
+import { Token, ResponsiveValue, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const textDecoration = {};
+export const textDecoration: Config = {
+  textDecoration: true,
+  textDecor: { property: 'textDecoration' },
+  textDecorationColor: t.colors('textDecorationColor'),
+  textDecorationLine: true,
+  textDecorationStyle: true,
+  textDecorationThickness: true,
+  textUnderlineOffset: true,
+  textShadow: t.shadows('textShadow'),
+};
 
 export interface TextDecorationProps {
   /************************************

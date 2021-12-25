@@ -1,7 +1,14 @@
 import * as CSS from 'csstype';
-import { ResponsiveValue } from '../utils';
+import { ResponsiveValue, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const list = {};
+export const list: Config = {
+  listStyleType: true,
+  listStylePosition: true,
+  listStylePos: t.prop('listStylePosition'),
+  listStyleImage: true,
+  listStyleImg: t.prop('listStyleImage'),
+};
 
 export interface ListProps {
   listStyleType?: ResponsiveValue<CSS.Property.ListStyleType>;

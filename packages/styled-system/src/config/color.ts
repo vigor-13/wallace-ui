@@ -1,7 +1,13 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const color = {};
+export const color: Config = {
+  color: t.colors('color'),
+  textColor: t.colors('color'),
+  fill: t.colors('fill'),
+  stroke: t.colors('stroke'),
+};
 
 export interface ColorProps {
   /**********************

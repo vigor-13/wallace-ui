@@ -1,7 +1,60 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const space = {};
+export const space: Config = {
+  margin: t.spaceT('margin'),
+  marginTop: t.spaceT('marginTop'),
+  marginBottom: t.spaceT('marginBottom'),
+  marginLeft: t.spaceT('marginLeft'),
+  marginRight: t.spaceT('marginRight'),
+  marginBlockStart: t.spaceT('marginBlockStart'),
+  marginBlockEnd: t.spaceT('marginBlockEnd'),
+  marginInlineStart: t.spaceT('marginInlineStart'),
+  marginInlineEnd: t.spaceT('marginInlineEnd'),
+  marginX: t.spaceT(['marginInlineStart', 'marginInlineEnd']),
+  marginY: t.spaceT(['marginTop', 'marginBottom']),
+  marginInline: t.spaceT('marginInline'),
+  marginBlock: t.spaceT('marginBlock'),
+  padding: t.space('paddingTop'),
+  paddingTop: t.space('paddingTop'),
+  paddingBottom: t.space('paddingBottom'),
+  paddingLeft: t.space('paddingLeft'),
+  paddingRight: t.space('paddingRight'),
+  paddingBlockStart: t.space('paddingBlockStart'),
+  paddingBlockEnd: t.space('paddingBlockEnd'),
+  paddingInlineStart: t.space('paddingInlineStart'),
+  paddingInlineEnd: t.space('paddingInlineEnd'),
+  paddingX: t.space(['paddingInlineStart', 'paddingInlineEnd']),
+  paddingY: t.space(['paddingTop', 'paddingBottom']),
+  paddingInline: t.space('paddingInline'),
+  paddingBlock: t.space('paddingBlock'),
+};
+
+Object.assign(space, {
+  m: space.margin,
+  mt: space.marginTop,
+  mb: space.marginBottom,
+  ml: space.marginLeft,
+  mr: space.marginRight,
+  ms: space.marginInlineStart,
+  me: space.marginInlineEnd,
+  mx: space.marginX,
+  my: space.marginY,
+  marginStart: space.marginInlineStart,
+  marginEnd: space.marginInlineEnd,
+  p: space.padding,
+  pt: space.paddingTop,
+  pb: space.paddingBottom,
+  pl: space.paddingLeft,
+  pr: space.paddingRight,
+  ps: space.paddingInlineStart,
+  pe: space.paddingInlineEnd,
+  px: space.paddingX,
+  py: space.paddingY,
+  paddingStart: space.paddingInlineStart,
+  paddingEnd: space.paddingInlineEnd,
+});
 
 export interface SpaceProps {
   /*******************************************

@@ -1,7 +1,20 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, t, transforms } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const transform = {};
+export const transform: Config = {
+  clipPath: true,
+  transform: t.propT('transform', transforms.transform),
+  transformOrigin: true,
+  translateX: t.spaceT('--wallace-translate-x'),
+  translateY: t.spaceT('--wallace-translate-y'),
+  skewX: t.degreeT('--wallace-skew-x'),
+  skewY: t.degreeT('--wallace-skew-y'),
+  scaleX: t.prop('--wallace-scale-x'),
+  scaleY: t.prop('--wallace-scale-y'),
+  scale: t.prop(['--wallace-scale-x', '--wallace-scale-y']),
+  rotate: t.degreeT('--wallace-rotate'),
+};
 
 export interface TransformProps {
   /**

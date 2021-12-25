@@ -1,7 +1,25 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const flexbox = {};
+export const flexbox: Config = {
+  flex: true,
+  flexFlow: true,
+  flexGrow: true,
+  flexShrink: true,
+  flexBasis: t.sizes('flexBasis'),
+  justifySelf: true,
+  alignSelf: true,
+  order: true,
+  placeItems: true,
+  placeContent: true,
+  placeSelf: true,
+  gap: t.space('gap'),
+  rowGap: t.space('rowGap'),
+  columnGap: t.space('columnGap'),
+  alignItems: true,
+  alignContent: true,
+};
 
 export interface FlexboxProps {
   /**************************

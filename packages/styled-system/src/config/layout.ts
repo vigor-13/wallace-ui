@@ -1,7 +1,50 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, t, transforms } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const layout = {};
+export const layout: Config = {
+  d: t.prop('display'),
+  width: t.sizesT('width'),
+  height: t.sizes('height'),
+  inlineSize: t.sizesT('inlineSize'),
+  blockSize: t.sizes(['width', 'height']),
+  boxSize: t.sizes(['width', 'height']),
+  minWidth: t.sizes('minWidth'),
+  minHeight: t.sizes('minHeight'),
+  minInlineSize: t.sizes('minInlineSize'),
+  minBlockSize: t.sizes('minBlockSize'),
+  maxWidth: t.sizes('maxWidth'),
+  maxHeight: t.sizes('maxHeight'),
+  maxInlineSize: t.sizes('maxInlineSize'),
+  maxBlockSize: t.sizes('maxBlockSize'),
+  overflow: true,
+  overflowX: true,
+  overflowY: true,
+  overscrollBehavior: true,
+  overscrollBehaviorX: true,
+  overscrollBehaviorY: true,
+  display: true,
+  verticalAlign: true,
+  boxSizing: true,
+  boxDecorationBreak: true,
+  float: t.propT('float', transforms.float),
+  objectFit: true,
+  objectPosition: true,
+  visibility: true,
+  isolation: true,
+};
+
+Object.assign(layout, {
+  w: layout.width,
+  h: layout.height,
+  minW: layout.minWidth,
+  maxW: layout.maxWidth,
+  minH: layout.minHeight,
+  maxH: layout.maxHeight,
+  overscroll: layout.overscrollBehavior,
+  overscrollX: layout.overscrollBehaviorX,
+  overscrollY: layout.overscrollBehaviorY,
+});
 
 export interface LayoutProps {
   /****************************

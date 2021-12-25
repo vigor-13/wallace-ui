@@ -1,7 +1,17 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, transforms, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const interactivity = {};
+export const interactivity: Config = {
+  apprearance: true,
+  cursor: true,
+  resize: true,
+  userSelect: true,
+  pointerEvents: true,
+  outline: { transform: transforms.outline },
+  outlineOffset: true,
+  outlineColor: t.colors('outlineColor'),
+};
 
 export interface InteractivityProps {
   /**

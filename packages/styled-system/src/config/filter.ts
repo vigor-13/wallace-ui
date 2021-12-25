@@ -1,7 +1,27 @@
 import * as CSS from 'csstype';
-import { Token, Length } from '../utils';
+import { Token, Length, transforms, t } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const filter = {};
+export const filter: Config = {
+  filter: { transform: transforms.filter },
+  blur: t.blur('--wallace-blur'),
+  brightness: t.propT('--wallace-brightness', transforms.brightness),
+  contrast: t.propT('--wallace-contrast', transforms.contrast),
+  hueRotate: t.degreeT('--wallace-hue-rotate'),
+  invert: t.propT('--wallace-invert', transforms.invert),
+  saturate: t.propT('--wallace-saturate', transforms.saturate),
+  dropShadow: t.propT('--wallace-drop-shadow', transforms.dropShadow),
+  backdropFilter: { transform: transforms.backdropFilter },
+  backdropBlur: t.blur('--wallace-backdrop-blur'),
+  backdropBrightness: t.propT(
+    '--wallace-backdrop-brightness',
+    transforms.brightness
+  ),
+  backdropContrast: t.propT('--wallace-backdrop-contrast', transforms.contrast),
+  backdropHueRotate: t.degreeT('--wallace-backdrop-hue-rotate'),
+  backdropInvert: t.propT('--wallace-backdrop-invert', transforms.invert),
+  backdropSaturate: t.propT('--wallace-backdrop-saturate', transforms.saturate),
+};
 
 export interface FilterProps {
   /****************************************************

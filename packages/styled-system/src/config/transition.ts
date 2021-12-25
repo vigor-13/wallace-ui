@@ -1,7 +1,16 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const transition = {};
+export const transition: Config = {
+  transition: true,
+  transitionDelay: true,
+  animation: true,
+  willChange: true,
+  transitionDuration: t.prop('transitionDuration', 'transition.duration'),
+  transitionProperty: t.prop('transitionProperty', 'transition.property'),
+  transitionTimingFunction: t.prop('transitionTimingFunction', 'transition.easing'),
+};
 
 export interface TransitionProps {
   /**

@@ -1,7 +1,68 @@
 import * as CSS from 'csstype';
 import { Token, ResponsiveValue } from '../utils';
+import { Config } from '../utils/prop-config';
+import { memoizedGet as get } from '@wallace-ui/utils';
 
-export const others = {};
+// ???
+const srOnly = {
+  border: '0px',
+  clip: 'rect(0, 0, 0, 0)',
+  width: '1px',
+  height: '1px',
+  margin: '-1px',
+  padding: '0px',
+  overflow: 'hidden',
+  whiteSpace: 'nowrap',
+  position: 'absolute',
+};
+
+// ???
+const srFocusable = {
+  position: 'static',
+  width: 'auto',
+  height: 'auto',
+  clip: 'auto',
+  padding: '0',
+  margin: '0',
+  overflow: 'visible',
+  whiteSpace: 'normal',
+};
+
+// ???
+const getWithPriority = (theme: any, key: any, styles: any) => {
+  const result: { [key: string]: any } = {};
+  const obj = get(theme, key, {});
+  for (const prop in obj) {
+    const isInStyles = prop in styles && styles[prop] != null;
+    if (!isInStyles) result[prop] = obj[prop];
+  }
+
+  return result;
+};
+
+export const others: Config = {
+  srOnly: {
+    transform(value) {
+      if (value === true) return srOnly;
+      if (value === 'focusable') return srFocusable;
+      return {};
+    },
+  },
+  layerStyle: {
+    processResult: true,
+    transform: (value, theme, styles) =>
+      getWithPriority(theme, `layerStyles.${value}`, styles),
+  },
+  textStyle: {
+    processResult: true,
+    transform: (value, theme, styles) =>
+      getWithPriority(theme, `textStyles.${value}`, styles),
+  },
+  apply: {
+    processResult: true,
+    transform: (value, theme, styles) => getWithPriority(theme, value, styles),
+  },
+};
 
 export interface OthersProps {
   /**

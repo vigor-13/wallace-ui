@@ -1,7 +1,36 @@
 import * as CSS from 'csstype';
-import { Token } from '../utils';
+import { t, Token } from '../utils';
+import { Config } from '../utils/prop-config';
 
-export const position = {};
+export const position: Config = {
+  position: true,
+  pos: t.prop('position'),
+  zIndex: t.prop('zIndex', 'zIndices'),
+  inset: t.spaceT('inset'),
+  insetX: t.spaceT(['left', 'right']),
+  insetY: t.spaceT(['top', 'bottom']),
+  insetInline: t.spaceT('insetInline'),
+  insetBlock: t.spaceT('insetBlock'),
+  top: t.spaceT('top'),
+  bottom: t.spaceT('bottom'),
+  left: t.spaceT('left'),
+  right: t.spaceT('right'),
+  insetBlockStart: t.spaceT('insetBlockStart'),
+  insetBlockEnd: t.spaceT('insetBlockEnd'),
+  insetInlineStart: t.logical({
+    scale: 'space',
+    property: { ltr: 'left', rtl: 'right' },
+  }),
+  insetInlineEnd: t.logical({
+    scale: 'space',
+    property: { ltr: 'right', rtl: 'left' },
+  }),
+};
+
+Object.assign(position, {
+  insetStart: position.insetInlineStart,
+  insetEnd: position.insetInlineEnd,
+});
 
 export interface PositionProps {
   /****************************
