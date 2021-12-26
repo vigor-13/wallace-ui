@@ -5,7 +5,10 @@ import {
   wallace,
   HTMLWallaceProps,
   ThemingProps,
+  useStyleConfig,
+  omitThemingProps,
 } from '@wallace-ui/system';
+import { SystemStyleObject } from '@wallace-ui/styled-system';
 
 export interface ButtonOptions {
   /**
@@ -24,9 +27,29 @@ export interface ButtonProps
     ThemingProps<'Button'> {}
 
 export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
-  const { children } = props;
+  const { children, isDisabled, as, ...rest } = omitThemingProps(props);
+  const styles = useStyleConfig('Button', { ...props });
 
-  return <wallace.button>{children}</wallace.button>;
+  const buttonStyles: SystemStyleObject = React.useMemo(() => {
+    return {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      appearance: 'none',
+      userSelect: 'none',
+      position: 'relative',
+      whiteSpace: 'nowrap',
+      verticalAlign: 'middle',
+      outline: 'none',
+      ...styles,
+    };
+  }, [styles]);
+
+  return (
+    <wallace.button disabled={isDisabled} as={as} __css={buttonStyles} {...rest}>
+      {children}
+    </wallace.button>
+  );
 });
 
 if (__DEV__) {

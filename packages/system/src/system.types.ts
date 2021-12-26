@@ -4,7 +4,9 @@ import {
   StyleProps,
   ResponsiveValue,
   SystemStyleObject,
+  ThemeTypings,
 } from '@wallace-ui/styled-system';
+import { Dict } from '@wallace-ui/utils';
 
 /**
  * wallace-ui 컴포넌트에서 사용할 공통 프로퍼티 정의
@@ -41,7 +43,17 @@ export interface WallaceProps extends StyleProps {
 /**
  * 테마 관련 프로퍼티 정의
  */
-export interface ThemingProps<ThemeComponent extends string = string> {}
+export interface ThemingProps<ThemeComponent extends string = string> {
+  variant?: ThemeComponent extends keyof ThemeTypings['components']
+    ? ThemeTypings['components'][ThemeComponent]['variants'] | (string & {})
+    : string;
+  size?: ThemeComponent extends keyof ThemeTypings['components']
+    ? ThemeTypings['components'][ThemeComponent]['sizes'] | (string & {})
+    : string;
+  colorScheme?: ThemeTypings['colorSchemes'] | (string & {});
+  orientation?: 'vertical' | 'horizontal';
+  styleConfig?: Dict;
+}
 
 /**
  * 리액트 컴포넌트를 받거나 리턴하는 함수를 표현한다.

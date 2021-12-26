@@ -1,4 +1,5 @@
-import { UnionStringArray } from '@wallace-ui/utils';
+import { omit, UnionStringArray } from '@wallace-ui/utils';
+import { ThemingProps } from './system.types';
 
 /**
  * wallace-ui 컴포넌트에서 사용되는 엄선된 DOM 엘리먼트 목록
@@ -27,3 +28,7 @@ export const domElements = [
 ] as const;
 
 export type DOMElement = UnionStringArray<typeof domElements>;
+
+export function omitThemingProps<T extends ThemingProps>(props: T) {
+  return omit(props, ['styleConfig', 'size', 'variant', 'colorScheme']);
+}

@@ -8,6 +8,6 @@ export default {
 
 export const basic = () => (
   <>
-    <Button as='div' isDisabled />
+    <Button>Button</Button>
   </>
 );
