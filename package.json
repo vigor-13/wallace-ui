@@ -23,6 +23,7 @@
     "system": "yarn workspace @wallace-ui/system",
     "styled-system": "yarn workspace @wallace-ui/styled-system",
     "utils": "yarn workspace @wallace-ui/utils",
+    "provider": "yarn workspace @wallace-ui/provider",
     "ui-button": "yarn workspace @wallace-ui/button",
     "test-utils": "yarn workspace @wallace-ui/test-utils"
   },
