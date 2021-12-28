@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ThemeProviderProps, ThemeProvider } from '@wallace-ui/system';
 import { Dict } from '@wallace-ui/utils';
+import ResetCSS from '@wallace-ui/reset-css';
 
 // ???
 export interface WallaceProviderProps
@@ -52,8 +53,18 @@ export const WallaceProvider: React.FC<WallaceProviderProps> = (props) => {
     cssVarsRoot,
   } = props;
 
+  /**
+   *  TODO: 미구현...
+   *  - GlobalStyle
+   *  - EnvironmentProvider
+   *  - IdProvider
+   *  - ColorModeProvider
+   *  - PortalManager
+   */
+
   return (
     <ThemeProvider theme={theme as Dict} cssVarsRoot={cssVarsRoot}>
+      {resetCSS && <ResetCSS />}
       {children}
     </ThemeProvider>
   );

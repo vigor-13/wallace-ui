@@ -6,6 +6,7 @@
   "workspaces": [
     "packages/*",
     "packages/components/*",
+    "packages/styles/*",
     "tools/*"
   ],
   "preconstruct": {
@@ -24,6 +25,7 @@
     "styled-system": "yarn workspace @wallace-ui/styled-system",
     "utils": "yarn workspace @wallace-ui/utils",
     "provider": "yarn workspace @wallace-ui/provider",
+    "reset-css": "yarn workspace @wallace-ui/reset-css",
     "ui-button": "yarn workspace @wallace-ui/button",
     "test-utils": "yarn workspace @wallace-ui/test-utils"
   },
