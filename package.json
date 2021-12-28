@@ -29,6 +29,8 @@
     "utils": "yarn workspace @wallace-ui/utils",
     "provider": "yarn workspace @wallace-ui/provider",
     "reset-css": "yarn workspace @wallace-ui/reset-css",
+    "theme": "yarn workspace @wallace-ui/theme",
+    "theme-tools": "yarn workspace @wallace-ui/theme-tools",
     "ui-button": "yarn workspace @wallace-ui/button",
     "test-utils": "yarn workspace @wallace-ui/test-utils"
   },

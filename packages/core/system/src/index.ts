@@ -1,3 +1,4 @@
+export * from '@wallace-ui/styled-system';
 export * from './forward-ref';
 export * from './system.types';
 export * from './system.utils';

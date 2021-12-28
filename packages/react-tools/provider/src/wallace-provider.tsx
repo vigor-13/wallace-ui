@@ -53,6 +53,8 @@ export const WallaceProvider: React.FC<WallaceProviderProps> = (props) => {
     cssVarsRoot,
   } = props;
 
+  console.log(theme);
+
   /**
    *  TODO: 미구현...
    *  - GlobalStyle
