@@ -5,8 +5,10 @@
   "private": true,
   "workspaces": [
     "packages/*",
+    "packages/core/*",
     "packages/components/*",
     "packages/styles/*",
+    "packages/react-tools/*",
     "tools/*"
   ],
   "preconstruct": {
