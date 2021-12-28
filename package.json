@@ -21,6 +21,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch",
+    "react": "yarn workspace @wallace-ui/react",
     "system": "yarn workspace @wallace-ui/system",
     "styled-system": "yarn workspace @wallace-ui/styled-system",
     "utils": "yarn workspace @wallace-ui/utils",
