@@ -1,5 +1,6 @@
 import { ThemeConfig } from './theme.types';
 import components from './components';
+import foundations from './foundations';
 
 const config: ThemeConfig = {
   cssVarPrefix: 'wallace',
@@ -9,9 +10,9 @@ const config: ThemeConfig = {
  * TODO: 미구현 ...
  *  - direction
  *  - styles
- *  - foundations
  */
 export const theme = {
+  ...foundations,
   components,
   config,
 };
