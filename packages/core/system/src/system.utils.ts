@@ -29,6 +29,13 @@ export const domElements = [
 
 export type DOMElement = UnionStringArray<typeof domElements>;
 
+/**
+ * 테마 관련 프로퍼티 생략
+ * - styleConfig
+ * - size
+ * - variant
+ * - colorScheme
+ */
 export function omitThemingProps<T extends ThemingProps>(props: T) {
   return omit(props, ['styleConfig', 'size', 'variant', 'colorScheme']);
 }

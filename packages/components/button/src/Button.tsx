@@ -1,5 +1,5 @@
 import React from 'react';
-import { __DEV__ } from '@wallace-ui/utils';
+import { dataAttr, __DEV__ } from '@wallace-ui/utils';
 import {
   forwardRef,
   wallace,
@@ -17,9 +17,14 @@ export interface ButtonOptions {
   type?: 'button' | 'reset' | 'submit';
 
   /**
-   * 버튼 비활성화 옵션 (true면 비활성화)
+   * 버튼 비활성화 옵션
    */
   isDisabled?: boolean;
+
+  /**
+   * 버튼 스타일 활성화 옵션
+   */
+  isActive?: boolean;
 }
 export interface ButtonProps
   extends HTMLWallaceProps<'button'>,
@@ -27,7 +32,7 @@ export interface ButtonProps
     ThemingProps<'Button'> {}
 
 export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
-  const { children, isDisabled, as, ...rest } = omitThemingProps(props);
+  const { children, isDisabled, as, isActive, ...rest } = omitThemingProps(props);
   const styles = useStyleConfig('Button', { ...props });
 
   const buttonStyles: SystemStyleObject = React.useMemo(() => {
@@ -46,7 +51,13 @@ export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
   }, [styles]);
 
   return (
-    <wallace.button disabled={isDisabled} as={as} __css={buttonStyles} {...rest}>
+    <wallace.button
+      disabled={isDisabled}
+      as={as}
+      data-active={dataAttr(isActive)}
+      __css={buttonStyles}
+      {...rest}
+    >
       {children}
     </wallace.button>
   );
