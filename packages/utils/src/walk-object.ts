@@ -18,7 +18,7 @@ export type MappedLeavesObject<Obj, LeafType> = {
 // ???
 export function walkObject<Target, LeafType>(
   target: Target,
-  predicate: any
+  predicate: WalkObjectPredicate
 ): MappedLeavesObject<Target, ReturnType<WalkObjectPredicate<LeafType>>> {
   function inner(value: unknown, path: string[] = []): any {
     if (isArray(value)) {

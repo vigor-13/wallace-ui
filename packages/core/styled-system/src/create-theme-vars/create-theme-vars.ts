@@ -1,4 +1,7 @@
 import { Dict } from '@wallace-ui/utils';
+import { walkObject } from '@wallace-ui/utils/src/walk-object';
+import { ThemeScale } from '.';
+import { cssVar } from './css-var';
 
 // ???
 export interface CreateThemeVarsOptions {
@@ -22,7 +25,56 @@ export function createThemeVars(target: Dict, options: CreateThemeVarsOptions) {
     cssVars: {},
   };
 
-  // TODO: walkObject 미구현...
+  walkObject(target, (value, path) => {
+    const [firstKey] = path;
+    const handler = tokenHandlerMap[firstKey] ?? tokenHandlerMap.defaultHandler;
+    const { cssVars, cssMap } = handler(path, value, options);
+
+    Object.assign(context.cssVars, cssVars);
+    Object.assign(context.cssMap, cssMap);
+  });
 
   return context;
 }
+
+// ???
+type TokenHandler = (
+  keys: string[],
+  value: unknown | { reference: string },
+  options: CreateThemeVarsOptions
+) => ThemeVars;
+
+/**
+ * Definition transformation handlers for ThemeScale.
+ */
+const tokenHandlerMap: Partial<Record<ThemeScale, TokenHandler>> & {
+  defaultHandler: TokenHandler;
+  [key: string]: any;
+} = {
+  space: (keys, value, options) => {
+    // TODO: 미구현 ...
+    return {
+      cssVars: {},
+      cssMap: {},
+    };
+  },
+  defaultHandler: (keys, value, options) => {
+    const lookupKey = keys.join('.');
+    const varKey = keys.join('-');
+
+    const { variable, reference } = cssVar(varKey, undefined, options.cssVarPrefix);
+
+    return {
+      cssVars: {
+        [variable]: value,
+      },
+      cssMap: {
+        [lookupKey]: {
+          value,
+          var: variable,
+          varRef: reference,
+        },
+      },
+    };
+  },
+};

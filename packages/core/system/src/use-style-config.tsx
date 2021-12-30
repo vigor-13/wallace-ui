@@ -18,6 +18,8 @@ export function useStyleConfig(themeKey: any, props: any = {}, opts: any = {}) {
   const themeStyleConfig = get(theme, `components.${themeKey}`);
   const styleConfig = StyleConfigProp || themeStyleConfig;
 
+  console.log(themeStyleConfig);
+
   const mergedProps = mergeWith(
     { theme },
     styleConfig?.defaultProps ?? {},

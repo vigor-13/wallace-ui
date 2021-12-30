@@ -18,10 +18,10 @@ export interface ThemeProviderProps extends EmotionThemeProviderProps {
   cssVarsRoot?: string;
 }
 
-// ???
 export const ThemeProvider = (props: ThemeProviderProps) => {
   const { cssVarsRoot = ':host, :root', theme, children } = props;
   const computedTheme = React.useMemo(() => toCSSVar(theme), [theme]);
+
   return (
     <EmotionThemeProvider theme={computedTheme}>
       <Global styles={(theme: any) => ({ [cssVarsRoot]: theme.__cssVars })} />
