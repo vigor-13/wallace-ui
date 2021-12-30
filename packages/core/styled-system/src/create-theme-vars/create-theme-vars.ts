@@ -11,7 +11,11 @@ export interface ThemeVars {
   cssMap: Dict;
 }
 
-// ???
+/**
+ * 테마 객체와 접두어를 받아서 CSS var를 생성한다.
+ *
+ * @see [MDN Reference - var()](https://developer.mozilla.org/ko/docs/Web/CSS/var())
+ */
 export function createThemeVars(target: Dict, options: CreateThemeVarsOptions) {
   const context: ThemeVars = {
     cssMap: {},

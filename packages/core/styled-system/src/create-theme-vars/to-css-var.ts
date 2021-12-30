@@ -3,19 +3,26 @@ import { WithCSSVar } from '../utils';
 import { createThemeVars } from './create-theme-vars';
 import { extractTokens, omitVars } from './theme-tokens';
 
-// ???
+/**
+ * 테마 객체를 분석해서 CSS var를 생성한다.
+ * 
+ * @see [MDN Reference - var()](https://developer.mozilla.org/ko/docs/Web/CSS/var())
+ */
 export function toCSSVar<T extends Dict>(rawTheme: T) {
-  /**
-   * In the case the theme has already been converted to css-var (e.g extending the theme),
-   * we can omit the computed css vars and recomputed it for the extended theme.
+  /* 
+   * 1. theme 객체가 이미 변환된 CSS var를 갖고 있는 경우(e.g extending the theme)에 해당 변수들을 생략함.
    */
   const theme = omitVars(rawTheme);
 
-  /**
-   * omit components and breakpoints from css variable map.
+  /*
+   * 2. 테마 객체에서 지정된 토큰을 키값으로 갖고 있는 프로퍼티들만 추출한다.
    */
   const tokens = extractTokens(theme);
 
+
+  /*
+   * 3. 변수 생성에 사용되는 접두어 (default: wallace) 
+   */
   const cssVarPrefix = theme.config?.cssVarPrefix;
 
   const {
