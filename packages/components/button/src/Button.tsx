@@ -52,10 +52,11 @@ export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
 
   return (
     <wallace.button
-      disabled={isDisabled}
-      as={as}
-      data-active={dataAttr(isActive)}
+      className='wallace-button'
       __css={buttonStyles}
+      as={as}
+      disabled={isDisabled}
+      data-active={dataAttr(isActive)}
       {...rest}
     >
       {children}

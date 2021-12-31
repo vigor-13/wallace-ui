@@ -1,5 +1,36 @@
-import type { SystemStyleObject } from '@wallace-ui/theme-tools';
+import {
+  mode,
+  SystemStyleFunction,
+  SystemStyleObject,
+} from '@wallace-ui/theme-tools';
 
+// ???
+type AccessibleColor = {
+  bg?: string;
+  color?: string;
+  hoverBg?: string;
+  activeBg?: string;
+};
+
+// ???
+const accessibleColorMap: { [key: string]: AccessibleColor } = {
+  yellow: {
+    bg: 'yellow.400',
+    color: 'black',
+    hoverBg: 'yellow.500',
+    activeBg: 'yellow.600',
+  },
+  cyan: {
+    bg: 'cyan.400',
+    color: 'black',
+    hoverBg: 'cyan.500',
+    activeBg: 'cyan.600',
+  },
+};
+
+/* --------------------------------------------------------------------------
+ * Base Style
+ ------------------------------------------------------------------------- */
 const baseStyle: SystemStyleObject = {
   lineHeight: '1.2',
   borderRadius: 'md',
@@ -21,15 +52,66 @@ const baseStyle: SystemStyleObject = {
   },
 };
 
-const defaultProps = {
-  variant: 'solid',
-  size: 'md',
-  colorScheme: 'grey',
+/* --------------------------------------------------------------------------
+ * Variants
+ ------------------------------------------------------------------------- */
+
+const variantUnstyled: SystemStyleObject = {
+  bg: 'none',
+  color: 'inherit',
+  display: 'inline',
+  lineHeight: 'inherit',
+  m: 0,
+  p: 0,
+};
+const variantSolid: SystemStyleFunction = (props) => {
+  const { colorScheme: c } = props;
+
+  if (c === 'gray') {
+    const bg = mode(`gray.100`, `whiteAlpha.200`)(props);
+
+    return {
+      bg,
+      _hover: {
+        bg: mode(`gray.200`, `whiteAlpha.300`)(props),
+        _disabled: {
+          bg,
+        },
+      },
+      _active: { bg: mode(`gray.300`, `whiteAlpha.400`)(props) },
+    };
+  }
+
+  const {
+    bg = `${c}.500`,
+    color = 'white',
+    hoverBg = `${c}.600`,
+    activeBg = `${c}.700`,
+  } = accessibleColorMap[c] ?? {};
+
+  const background = mode(bg, `${c}.200`)(props);
+
+  return {
+    bg: background,
+    color: mode(color, `gray.800`)(props),
+    _hover: {
+      bg: mode(hoverBg, `${c}.300`)(props),
+      _disabled: {
+        bg: background,
+      },
+    },
+    _active: { bg: mode(activeBg, `${c}.400`)(props) },
+  };
 };
 
-// TODO: 미구현 ...
-const variants = {};
+const variants = {
+  unstyled: variantUnstyled,
+  solid: variantSolid,
+};
 
+/* --------------------------------------------------------------------------
+ * Size
+ ------------------------------------------------------------------------- */
 const sizes: Record<string, SystemStyleObject> = {
   lg: {
     h: 12,
@@ -55,6 +137,15 @@ const sizes: Record<string, SystemStyleObject> = {
     fontSize: 'xs',
     px: 2,
   },
+};
+
+/* --------------------------------------------------------------------------
+ * Default property
+ ------------------------------------------------------------------------- */
+const defaultProps = {
+  variant: 'solid',
+  size: 'md',
+  colorScheme: 'grey',
 };
 
 export default {
