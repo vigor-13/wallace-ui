@@ -92,7 +92,7 @@ export const toCSSObject: GetStyleObject =
       filterUndefined(styleProps),
       sx
     );
-    const computedCSS = css(finalStyles)(props.theme);
+    const computedCSS = css(finalStyles)(theme);
     return cssProp ? [computedCSS, cssProp] : computedCSS;
   };
 

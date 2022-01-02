@@ -14,11 +14,9 @@ import { useWallace } from './hooks';
 export function useStyleConfig(themeKey: any, props: any = {}, opts: any = {}) {
   const { styleConfig: StyleConfigProp, ...rest } = props;
 
-  const { theme } = useWallace(); // TODO: colorMode 구현 필요...
+  const { theme } = useWallace(); // *TODO: colorMode 구현 필요...
   const themeStyleConfig = get(theme, `components.${themeKey}`);
   const styleConfig = StyleConfigProp || themeStyleConfig;
-
-  console.log(themeStyleConfig);
 
   const mergedProps = mergeWith(
     { theme },

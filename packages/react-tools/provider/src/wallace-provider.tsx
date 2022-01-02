@@ -29,12 +29,12 @@ export interface WallaceProviderProps
   children?: React.ReactNode;
 
   /**
-   * TODO: 미구현...
+   * *TODO: 미구현...
    */
   colorModeManager?: any;
 
   /**
-   * TODO: 미구현...
+   * *TODO: 미구현...
    */
   environment?: any;
 }
@@ -54,12 +54,12 @@ export const WallaceProvider: React.FC<WallaceProviderProps> = (props) => {
   } = props;
 
   /**
-   *  TODO: 미구현...
-   *  - GlobalStyle
-   *  - EnvironmentProvider
-   *  - IdProvider
-   *  - ColorModeProvider
-   *  - PortalManager
+   *  *TODO: 미구현...
+   *  * - GlobalStyle
+   *  * - EnvironmentProvider
+   *  * - IdProvider
+   *  * - ColorModeProvider
+   *  * - PortalManager
    */
 
   return (
