@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '@wallace-ui/layout';
-import { Button } from '../Button';
+import { Button } from '../src';
 
 export default {
   title: 'Components / Inputs / Button',

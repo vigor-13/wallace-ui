@@ -65,10 +65,20 @@ export const fromEntries = <T extends unknown>(entries: [string, any][]) =>
     return carry;
   }, {}) as T;
 
+type Get = (
+  obj: Readonly<object>,
+  path: string | number,
+  fallback?: any,
+  index?: number
+) => any;
+
 /**
- * ???
- * Get value from a deeply nested object using a string path.
- * Memoizes the value.
+ * 경로(key)를 사용해 중첩된 객체(nested object)에서 값을 찾는 함수다.
+ *
+ * @example
+ * ```typescript
+ * get(theme, `components.${themekey}`)
+ * ```
  */
 export function get(
   obj: { [key: string | number]: any },
@@ -85,14 +95,6 @@ export function get(
 
   return obj === undefined ? fallback : obj;
 }
-
-// ???
-type Get = (
-  obj: Readonly<object>,
-  path: string | number,
-  fallback?: any,
-  index?: number
-) => any;
 
 // ???
 export const memoize = (fn: Get) => {
