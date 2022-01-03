@@ -32,6 +32,7 @@
     "theme": "yarn workspace @wallace-ui/theme",
     "theme-tools": "yarn workspace @wallace-ui/theme-tools",
     "ui-button": "yarn workspace @wallace-ui/button",
+    "ui-layout": "yarn workspace @wallace-ui/layout",
     "test-utils": "yarn workspace @wallace-ui/test-utils"
   },
   "repository": {
