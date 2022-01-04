@@ -51,7 +51,6 @@ export type Config = Record<string, PropConfig | true>;
 
 // ???
 export function toConfig(scale: ThemeScale, transform?: Transform) {
-  // TODO: ...
   return <T extends CSSProp>(property: T | T[]) => {
     const result: PropConfig = { property, scale };
     result.transform = createTransform({

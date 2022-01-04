@@ -1,7 +1,8 @@
 import { Dict } from '@wallace-ui/utils';
 import { walkObject } from '@wallace-ui/utils/src/walk-object';
-import { ThemeScale } from '.';
+import { ThemeScale } from './theme-tokens';
 import { cssVar } from './css-var';
+import { calc, Operand } from './calc';
 
 // ???
 export interface CreateThemeVarsOptions {
@@ -52,10 +53,28 @@ const tokenHandlerMap: Partial<Record<ThemeScale, TokenHandler>> & {
   [key: string]: any;
 } = {
   space: (keys, value, options) => {
-    // TODO: 미구현 ...
+    const properties = tokenHandlerMap.defaultHandler(keys, value, options);
+    const [firstKey, ...referenceKeys] = keys; // e.g. firstKey: 'space', referenceKeys: ['1']
+    const negativeLookupKey = `${firstKey}.-${referenceKeys.join('.')}`;
+    const negativeVarKey = keys.join('-');
+    const { variable, reference } = cssVar(
+      negativeVarKey,
+      undefined,
+      options.cssVarPrefix
+    );
+    const negativeValue = calc.negate(value as Operand);
+    const varRef = calc.negate(reference);
+
     return {
-      cssVars: {},
-      cssMap: {},
+      cssVars: properties.cssVars,
+      cssMap: {
+        ...properties.cssMap,
+        [negativeLookupKey]: {
+          value: `${negativeValue}`,
+          var: `${variable}`,
+          varRef,
+        },
+      },
     };
   },
   defaultHandler: (keys, value, options) => {
