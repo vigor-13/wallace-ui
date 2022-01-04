@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@wallace-ui/button": "0.1.0",
+    "@wallace-ui/layout": "0.1.0",
     "@wallace-ui/provider": "0.1.0",
+    "@wallace-ui/reset-css": "0.1.0",
+    "@wallace-ui/system": "0.1.0",
     "@wallace-ui/theme": "0.1.0"
   }
 }
