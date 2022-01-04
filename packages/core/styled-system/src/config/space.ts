@@ -16,7 +16,7 @@ export const space: Config = {
   marginY: t.spaceT(['marginTop', 'marginBottom']),
   marginInline: t.spaceT('marginInline'),
   marginBlock: t.spaceT('marginBlock'),
-  padding: t.space('paddingTop'),
+  padding: t.space('padding'),
   paddingTop: t.space('paddingTop'),
   paddingBottom: t.space('paddingBottom'),
   paddingLeft: t.space('paddingLeft'),
