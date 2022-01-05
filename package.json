@@ -2,58 +2,53 @@
   "name": "wallace-ui",
   "version": "0.1.0",
   "description": "",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "homepage": "https://github.com/wallace5796/wallace-ui#readme",
+  "license": "MIT",
   "private": true,
   "workspaces": [
     "packages/*",
     "packages/core/*",
     "packages/components/*",
-    "packages/styles/*",
     "packages/react-tools/*",
+    "packages/styles/*",
     "tools/*"
   ],
   "preconstruct": {
     "packages": [
-      "packages/system",
-      "packages/styled-system",
-      "packages/utils",
-      "packages/components/*"
+      "packages/*",
+      "packages/core/*",
+      "packages/components/*",
+      "packages/react-tools/*",
+      "packages/styles/*",
+      "tools/*"
     ]
-  },
-  "scripts": {
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "test": "jest --watch",
-    "react": "yarn workspace @wallace-ui/react",
-    "system": "yarn workspace @wallace-ui/system",
-    "styled-system": "yarn workspace @wallace-ui/styled-system",
-    "utils": "yarn workspace @wallace-ui/utils",
-    "provider": "yarn workspace @wallace-ui/provider",
-    "reset-css": "yarn workspace @wallace-ui/reset-css",
-    "theme": "yarn workspace @wallace-ui/theme",
-    "theme-tools": "yarn workspace @wallace-ui/theme-tools",
-    "ui-button": "yarn workspace @wallace-ui/button",
-    "ui-layout": "yarn workspace @wallace-ui/layout",
-    "test-utils": "yarn workspace @wallace-ui/test-utils"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/woon5796/wallace-ui.git"
+    "url": "git+https://github.com/wallace5796/wallace-ui.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/woon5796/wallace-ui/issues"
+  "scripts": {
+    "manypkg:run": "manypkg run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "jest --watch",
+    "clean-dist": "manypkg exec rimraf dist"
   },
-  "homepage": "https://github.com/woon5796/wallace-ui#readme",
   "dependencies": {
+    "@babel/runtime": "^7.16.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.0",
+    "@manypkg/cli": "^0.19.1",
+    "@preconstruct/cli": "^2.1.5",
     "@storybook/addon-actions": "^6.4.1",
     "@storybook/addon-essentials": "^6.4.1",
     "@storybook/addon-links": "^6.4.1",
@@ -62,7 +57,9 @@
     "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "add": "^2.0.6",
     "babel-loader": "^8.2.3",
+    "cross-env": "^7.0.3",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
