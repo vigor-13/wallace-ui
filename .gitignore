@@ -2,3 +2,10 @@ node_modules
 dist
 storybook-static
 coverage
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
