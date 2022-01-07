@@ -1,6 +1,26 @@
 import path from 'path';
+import fs from 'fs';
 import * as tsNode from 'ts-node';
 import * as tsConfigPaths from 'tsconfig-paths';
+import { isObject } from '@wallace-ui/utils';
+
+const bold = (text: string) => `\x1b[1m${text}\x1b[22m`;
+
+async function importTheme(path: string) {
+  const module = await import(path);
+  const theme = module.default ?? module.theme;
+
+  if (!theme)
+    throw new Error(`
+    Theme export not found in module: '${path}'
+
+    A theme shoudl have a ${bold('default')} export or a ${bold(
+      'theme'
+    )} named export.
+  `);
+
+  return theme;
+}
 
 async function readTheme(themeFilePath: string) {
   /*
@@ -11,31 +31,48 @@ async function readTheme(themeFilePath: string) {
   const absoluteThemeDir = path.dirname(absoluteThemePath);
 
   /*
-   * tsConfig 파일 경로
+   * tsConfig 파일 탐색
    */
   const tsConfig = tsConfigPaths.loadConfig(absoluteThemeDir);
   if (tsConfig.resultType === 'success') {
+    /*
+     * TS 프로젝트인 경우 해당 tsconfig 사용
+     */
     tsNode.register({
-      // use the TS projects own tsconfig file
       project: tsConfig.configFileAbsolutePath,
       compilerOptions: {
         module: 'CommonJS',
       },
     });
 
-    /**
-     *
-     */
-    const aliases = Object.keys(tsConfig.paths).reduce((acc, tsAlias) => {
-      return acc;
-    }, {});
+    // *TODO: module alias replace 기능 미구현...
   } else {
+    /*
+     * JS 프로젝트인 경우 디폴트 설정 사용
+     */
+    const defaultProject = path.join(__dirname, '..', '..', 'bin', 'tsconfig.json');
+    tsNode.register({
+      project: defaultProject,
+    });
   }
 
   //
   try {
-    (<any>process).send(absoluteThemeDir);
-  } catch (error) {}
+    /*
+     * 경로에 theme 파일이 존재하는지 확인
+        - REF: https://stackoverflow.com/questions/54514627/nodejs-fs-stat-or-fs-access-to-check-if-a-folder-exists
+     */
+    await fs.promises.stat(absoluteThemePath);
+    return importTheme(absoluteThemePath);
+  } catch (statError) {
+    try {
+      return importTheme(require.resolve(themeFilePath, { paths: [cwd] }));
+    } catch (resolveError) {
+      throw new Error(
+        `Theme file or package not found \n ${statError} \n${resolveError}`
+      );
+    }
+  }
 }
 
 /**
@@ -50,6 +87,9 @@ async function run() {
   }
 
   const theme = await readTheme(themeFile);
+  if (!isObject(theme)) {
+    throw new Error('Theme not found in default or named `theme` export');
+  }
 }
 
 run().catch((e) => {
