@@ -1,7 +1,13 @@
 import { SystemStyleObject } from '@wallace-ui/system';
 import { Dict } from '@wallace-ui/utils';
-
 export type { SystemStyleObject };
+
+/* --------------------------------------------------------------------------
+ * Style Configuration definition for components
+ ------------------------------------------------------------------------- */
+
+// minimal representation of the anoatomy object
+type Anatomy = { __type: string };
 
 /* --------------------------------------------------------------------------
  * Style functions used in the theme
@@ -21,6 +27,18 @@ export type StyleFunctionProps = {
 export type SystemStyleFunction = (props: StyleFunctionProps) => SystemStyleObject;
 
 export type SystemStyleInterpolation = SystemStyleObject | SystemStyleFunction;
+
+export type PartsStyleObject<T extends Anatomy = Anatomy> = Partial<
+  Record<T['__type'], SystemStyleObject>
+>;
+
+export type PartsStyleFunction<T extends Anatomy = Anatomy> = (
+  props: StyleFunctionProps
+) => PartsStyleObject<T>;
+
+export type PartsStyleInterpolation<T extends Anatomy = Anatomy> =
+  | PartsStyleObject<T>
+  | PartsStyleFunction<T>;
 
 /* --------------------------------------------------------------------------
  * Global style object definitions
