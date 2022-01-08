@@ -15,6 +15,6 @@ export default {
 
 export const basic = () => (
   <>
-    <Button>Button</Button>
+    <Button background='brand.blue'>Button</Button>
   </>
 );
