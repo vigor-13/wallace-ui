@@ -1,6 +1,40 @@
 import { isWallaceTheme } from '@wallace-ui/theme/src/utils';
 import { Dict, pipe, mergeWith, isFunction } from '@wallace-ui/utils';
-import { theme } from '@wallace-ui/theme';
+import { theme, Theme, WallaceTheme } from '@wallace-ui/theme';
+
+type CloneKey<Target, Key> = Key extends keyof Target ? Target[Key] : unknown;
+
+export type DeepPartial<T> = {
+  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
+};
+
+/**
+ * Represents a loose but specific type for the theme override.
+ * It provides autocomplete hints for extending the theme, but leaves room
+ * for adding properties.
+ */
+type DeepThemeExtension<BaseTheme, ThemeType> = {
+  [Key in keyof BaseTheme]?: BaseTheme[Key] extends (...args: any[]) => any
+    ? DeepThemeExtension<
+        DeepPartial<ReturnType<BaseTheme[Key]>>,
+        CloneKey<ThemeType, Key>
+      >
+    : BaseTheme[Key] extends Array<any>
+    ? CloneKey<ThemeType, Key>
+    : BaseTheme[Key] extends object
+    ? DeepThemeExtension<DeepPartial<BaseTheme[Key]>, CloneKey<ThemeType, Key>>
+    : CloneKey<ThemeType, Key>;
+};
+
+export declare type ThemeOverride<BaseTheme = Theme> = DeepPartial<WallaceTheme> &
+  DeepThemeExtension<BaseTheme, WallaceTheme> &
+  Dict;
+
+export type ThemeExtension<Override extends ThemeOverride = ThemeOverride> = (
+  themeOverride: Override
+) => Override;
+
+// export type ThemeExtension<Override extends > = () =>
 
 /**
  * NOTE: This got too complex to manage and it's not worth the extra complexity.
@@ -48,9 +82,10 @@ export function extendTheme(...extensions: extendThemeProps): Dict {
 }
 
 export function mergeThemeOverride(...overrides: any[]): any {
-  return mergeWith({}, ...overrides);
+  return mergeWith({}, ...overrides, mergeThemeCustomizer);
 }
 
+// ???
 function mergeThemeCustomizer(
   source: unknown,
   override: unknown,

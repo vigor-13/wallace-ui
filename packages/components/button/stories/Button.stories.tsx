@@ -6,7 +6,7 @@ export default {
   title: 'Components / Inputs / Button',
   decorators: [
     (Story: any) => (
-      <Container mt='40px' centerContent>
+      <Container mt='40px'>
         <Story />
       </Container>
     ),
@@ -15,6 +15,13 @@ export default {
 
 export const basic = () => (
   <>
-    <Button background='brand.blue'>Button</Button>
+    <Button>Button</Button>
+    <Button background='brand.blue' color='white'>
+      worriors blue
+    </Button>
+    <Button background='brand.red' color='white'>
+      worriors red
+    </Button>
+    <Button background='brand.yellow'>worriors yellow</Button>
   </>
 );

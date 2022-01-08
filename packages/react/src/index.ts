@@ -5,3 +5,4 @@ export * from '@wallace-ui/layout';
 export * from '@wallace-ui/button';
 export * from './wallace-provider';
 export * from './extend-theme';
+export * from './theme-extensions';
