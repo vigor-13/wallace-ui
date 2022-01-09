@@ -3,6 +3,8 @@ import fs from 'fs';
 import * as tsNode from 'ts-node';
 import * as tsConfigPaths from 'tsconfig-paths';
 import { isObject } from '@wallace-ui/utils';
+import { createThemeTypingsInterface } from '../command/create-theme-typings-interface';
+import { themeKeyConfiguration } from '../command/config';
 
 const bold = (text: string) => `\x1b[1m${text}\x1b[22m`;
 
@@ -87,8 +89,20 @@ async function run() {
   }
 
   const theme = await readTheme(themeFile);
+
   if (!isObject(theme)) {
     throw new Error('Theme not found in default or named `theme` export');
+  }
+
+  const template = await createThemeTypingsInterface(theme, {
+    config: themeKeyConfiguration,
+    strictComponentTypes,
+  });
+
+  if (process.send) {
+    process.send(template);
+  } else {
+    process.stdout.write(template);
   }
 }
 

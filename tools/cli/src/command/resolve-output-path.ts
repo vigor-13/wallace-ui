@@ -11,3 +11,48 @@ export const themeInterfaceDestination = [
   'src',
   'theming.types.d.ts',
 ];
+
+const exists = promisify(fs.exists);
+
+/**
+ * Finds the target file to override
+ * In our case it is located in the @wallace-ui/styled-system package
+ */
+async function resolveThemingDefinitionPath(): Promise<string | undefined> {
+  const baseDir = path.join('..', '..', '..');
+  const cwd = process.cwd();
+
+  const pathsToTry = [
+    path.resolve(baseDir, '..', ...themeInterfaceDestination),
+    path.resolve(baseDir, '..', '..', ...themeInterfaceDestination),
+    path.resolve(cwd, ...themeInterfaceDestination),
+    path.resolve(cwd, '..', ...themeInterfaceDestination),
+    path.resolve(cwd, '..', '..', ...themeInterfaceDestination),
+  ];
+
+  const triedPaths = await Promise.all(
+    pathsToTry.map(async (possiblePath) => {
+      if (await exists(possiblePath)) return possiblePath;
+
+      return '';
+    })
+  );
+
+  return triedPaths.find(Boolean);
+}
+
+/**
+ * Find the location of the default target file or resolve the given path
+ */
+export async function resolveOutputPath(overridePath: string): Promise<string> {
+  if (overridePath) return path.resolve(process.cwd(), overridePath);
+
+  const themingDefinitionFilePath = await resolveThemingDefinitionPath();
+
+  if (!themingDefinitionFilePath)
+    throw new Error(
+      'Could not find @wallace-ui/styled-system in node_modules. Please provide `--out` parameter.'
+    );
+
+  return themingDefinitionFilePath;
+}
