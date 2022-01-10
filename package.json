@@ -29,11 +29,13 @@
     "url": "git+https://github.com/wallace5796/wallace-ui.git"
   },
   "scripts": {
-    "manypkg:run": "manypkg run",
+    "manypkg": "manypkg run",
+    "manypkg:clean-dist": "manypkg exec rimraf dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch",
-    "clean-dist": "manypkg exec rimraf dist"
+    "build": "yarn build:babel",
+    "build:babel": "yarn manypkg babel-plugin build"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",
