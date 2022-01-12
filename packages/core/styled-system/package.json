@@ -1,14 +1,20 @@
 {
   "name": "@wallace-ui/styled-system",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Style function for css-in-js building component libraries",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "license": "MIT",
+  "main": "dist/wallace-ui-styled-system.cjs.js",
+  "module": "dist/wallace-ui-styled-system.esm.js",
+  "types": "dist/wallace-ui-styled-system.cjs.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@wallace-ui/utils": "0.1.0",
     "csstype": "^3.0.10"

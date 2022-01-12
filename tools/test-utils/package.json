@@ -1,14 +1,14 @@
 {
   "name": "@wallace-ui/test-utils",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Testing utilities for Wallace UI's components",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "main": "src/index.ts",
+  "peerDependencies": {
+    "react": ">=16.8.6"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2"

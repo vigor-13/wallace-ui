@@ -4,9 +4,9 @@
   "description": "Wallace UI layout components",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
-  "main": "dist/wallace-ui-button.cjs.js",
-  "module": "dist/wallace-ui-button.esm.js",
-  "types": "dist/wallace-ui-button.cjs.d.ts",
+  "main": "dist/wallace-ui-layout.cjs.js",
+  "module": "dist/wallace-ui-layout.esm.js",
+  "types": "dist/wallace-ui-layout.cjs.d.ts",
   "files": [
     "dist",
     "src"

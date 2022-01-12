@@ -20,8 +20,7 @@
       "packages/core/*",
       "packages/components/*",
       "packages/react-tools/*",
-      "packages/styles/*",
-      "tools/*"
+      "packages/styles/*"
     ]
   },
   "repository": {

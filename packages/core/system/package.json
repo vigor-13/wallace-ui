@@ -1,14 +1,25 @@
 {
   "name": "@wallace-ui/system",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Wallace UI system primitives",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "license": "MIT",
+  "main": "dist/wallace-ui-system.cjs.js",
+  "module": "dist/wallace-ui-system.esm.js",
+  "types": "dist/wallace-ui-system.cjs.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "peerDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "react": ">=16.8.6"
+  },
   "dependencies": {
     "@emotion/styled": "^11.6.0",
     "@wallace-ui/styled-system": "0.1.0",
