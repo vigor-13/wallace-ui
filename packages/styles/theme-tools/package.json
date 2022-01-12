@@ -1,14 +1,23 @@
 {
   "name": "@wallace-ui/theme-tools",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Set of helpers that makes theming and styling easier",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "license": "MIT",
+  "main": "dist/wallace-ui-theme-tools.cjs.js",
+  "module": "dist/wallace-ui-theme-tools.esm.js",
+  "types": "dist/wallace-ui-theme-tools.cjs.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "peerDependencies": {
+    "@wallace-ui/system": ">=0.1.0"
+  },
   "dependencies": {
     "@wallace-ui/system": "0.1.0"
   }

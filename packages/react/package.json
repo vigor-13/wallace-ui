@@ -1,14 +1,26 @@
 {
   "name": "@wallace-ui/react",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Responsive and accessible React UI components built with React and Emotion",
+  "author": "Kim kiwoon<kkw5796@gmail.com>",
+  "license": "MIT",
+  "main": "dist/wallace-ui-react.cjs.js",
+  "module": "dist/wallace-ui-react.esm.js",
+  "types": "dist/wallace-ui-react.cjs.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "peerDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "11.0.0",
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6"
+  },
   "dependencies": {
     "@wallace-ui/button": "0.1.0",
     "@wallace-ui/layout": "0.1.0",
@@ -16,5 +28,11 @@
     "@wallace-ui/reset-css": "0.1.0",
     "@wallace-ui/system": "0.1.0",
     "@wallace-ui/theme": "0.1.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.2"
   }
 }

@@ -34,8 +34,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch",
-    "build": "yarn build:babel",
-    "build:babel": "yarn pkg babel-plugin build"
+    "build": "yarn build:babel && yarn build:cli && preconstruct build",
+    "build:babel": "yarn pkg babel-plugin build",
+    "build:cli": "yarn pkg cli build",
+    "build:tokens": "wallace-cli tokens packages/styles/theme"
   },
   "dependencies": {
     "@babel/runtime": "^7.16.7",

@@ -1,14 +1,24 @@
 {
   "name": "@wallace-ui/button",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "Wallace UI button component",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
+  "license": "MIT",
+  "main": "dist/wallace-ui-button.cjs.js",
+  "module": "dist/wallace-ui-button.esm.js",
+  "types": "dist/wallace-ui-button.cjs.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "peerDependencies": {
+    "@wallace-ui/system": ">=0.1.0",
+    "react": ">=16.8.6"
+  },
   "dependencies": {
     "@wallace-ui/layout": "0.1.0",
     "@wallace-ui/system": "0.1.0",

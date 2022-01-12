@@ -6,6 +6,16 @@
   "author": "",
   "license": "MIT",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "bin": {
+    "wallace-cli": "bin/index.js"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts -d dist --source-maps",
