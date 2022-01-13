@@ -29,17 +29,19 @@
   },
   "scripts": {
     "pkg": "manypkg run",
-    "pkg:clean": "manypkg exec rimraf dist",
+    "clean": "yarn clean:dist && yarn clean:modules",
+    "clean:dist": "manypkg exec rimraf dist",
+    "clean:modules": "rimraf node_modules",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch",
+    "prebuild": "yarn && preconstruct validate",
     "build": "yarn build:babel && yarn build:cli && preconstruct build",
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
     "build:tokens": "wallace-cli tokens packages/styles/theme"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -51,6 +53,7 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.5",
     "@babel/preset-typescript": "^7.16.0",
+    "@babel/runtime": "^7.16.3",
     "@manypkg/cli": "^0.19.1",
     "@preconstruct/cli": "^2.1.5",
     "@storybook/addon-actions": "^6.4.1",
@@ -61,7 +64,6 @@
     "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "add": "^2.0.6",
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "eslint": "^8.3.0",

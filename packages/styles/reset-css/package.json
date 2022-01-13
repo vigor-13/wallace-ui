@@ -2,7 +2,7 @@
   "name": "@wallace-ui/reset-css",
   "version": "0.1.0",
   "description": "Reset CSS for Wallace UI",
-  "author": "",
+  "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
   "main": "dist/wallace-ui-reset-css.cjs.js",
   "module": "dist/wallace-ui-reset-css.esm.js",

@@ -15,12 +15,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "@wallace-ui/system": ">=0.1.0"
-  },
   "dependencies": {
     "@wallace-ui/styled-system": "0.1.0",
     "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/theme-tools": "0.1.0"
+    "@wallace-ui/theme-tools": "0.1.0",
+    "@wallace-ui/utils": "0.1.0"
   }
 }

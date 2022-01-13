@@ -27,7 +27,8 @@
     "@wallace-ui/provider": "0.1.0",
     "@wallace-ui/reset-css": "0.1.0",
     "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/theme": "0.1.0"
+    "@wallace-ui/theme": "0.1.0",
+    "@wallace-ui/utils": "0.1.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.4.0",

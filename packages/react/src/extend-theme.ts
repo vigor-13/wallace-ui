@@ -1,6 +1,5 @@
-import { isWallaceTheme } from '@wallace-ui/theme/src/utils';
 import { Dict, pipe, mergeWith, isFunction } from '@wallace-ui/utils';
-import { theme, Theme, WallaceTheme } from '@wallace-ui/theme';
+import { theme, Theme, WallaceTheme, isWallaceTheme } from '@wallace-ui/theme';
 
 type CloneKey<Target, Key> = Key extends keyof Target ? Target[Key] : unknown;
 
