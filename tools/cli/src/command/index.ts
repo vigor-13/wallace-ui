@@ -11,12 +11,6 @@ type ErrorRecord = Record<'err', string>;
 
 const writeFileAsync = promisify(writeFile);
 
-interface GenerateThemeTypingsProps {
-  themeFile: string;
-  out: string;
-  strictComponentTypes?: boolean;
-}
-
 interface RunTemplateWorkerProps {
   themeFile: string;
   strictComponentTypes?: boolean;
@@ -49,6 +43,12 @@ async function runTemplateWorker(props: RunTemplateWorkerProps): Promise<string>
 
     worker.on('error', reject);
   });
+}
+
+interface GenerateThemeTypingsProps {
+  themeFile: string;
+  out: string;
+  strictComponentTypes?: boolean;
 }
 
 export async function generateThemeTypings(props: GenerateThemeTypingsProps) {

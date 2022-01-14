@@ -7,7 +7,7 @@ export const themeInterfaceDestination = [
   '@wallace-ui',
   'styled-system',
   'dist',
-  'declaration',
+  'declarations',
   'src',
   'theming.types.d.ts',
 ];
@@ -23,8 +23,17 @@ async function resolveThemingDefinitionPath(): Promise<string | undefined> {
   const cwd = process.cwd();
 
   const pathsToTry = [
+    /*
+      @example: /Users/node_modules/@wallace-ui/styled-system/dist/declarations/src/theming.types.d.ts
+     */
     path.resolve(baseDir, '..', ...themeInterfaceDestination),
+    /*
+      @example: /node_modules/@wallace-ui/styled-system/dist/declarations/src/theming.types.d.ts
+     */
     path.resolve(baseDir, '..', '..', ...themeInterfaceDestination),
+    /*
+      @example: /Users/your_project_dir/wallace-ui/node_modules/@wallace-ui/styled-system/dist/declarations/src/theming.types.d.ts
+     */
     path.resolve(cwd, ...themeInterfaceDestination),
     path.resolve(cwd, '..', ...themeInterfaceDestination),
     path.resolve(cwd, '..', '..', ...themeInterfaceDestination),
@@ -48,7 +57,6 @@ export async function resolveOutputPath(overridePath: string): Promise<string> {
   if (overridePath) return path.resolve(process.cwd(), overridePath);
 
   const themingDefinitionFilePath = await resolveThemingDefinitionPath();
-
   if (!themingDefinitionFilePath)
     throw new Error(
       'Could not find @wallace-ui/styled-system in node_modules. Please provide `--out` parameter.'
