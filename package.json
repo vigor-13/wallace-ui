@@ -34,19 +34,21 @@
   },
   "scripts": {
     "pkg": "manypkg run",
+    "commit": "cz",
+    "story": "start-storybook -p 6006",
+    "story:build": "build-storybook",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --maxWorkers=25% --watch --onlyChanged",
+    "test:ci": "jest --colors --runInBand --ci",
     "clean": "yarn clean:dist && yarn clean:modules",
     "clean:dist": "manypkg exec rimraf dist",
     "clean:modules": "rimraf node_modules",
-    "story": "start-storybook -p 6006",
-    "story:build": "build-storybook",
-    "test": "jest --watch",
     "prebuild": "yarn && preconstruct validate",
     "build": "yarn build:babel && yarn build:cli && preconstruct build && yarn build:tokens",
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
     "build:tokens": "wallace-cli tokens packages/styles/theme",
-    "release": "changeset publish",
-    "commit": "cz"
+    "release": "changeset publish"
   },
   "dependencies": {
     "react": "^17.0.2",
