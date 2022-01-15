@@ -27,19 +27,26 @@
     "type": "git",
     "url": "git+https://github.com/wallace5796/wallace-ui.git"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
     "pkg": "manypkg run",
     "clean": "yarn clean:dist && yarn clean:modules",
     "clean:dist": "manypkg exec rimraf dist",
     "clean:modules": "rimraf node_modules",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "story": "start-storybook -p 6006",
+    "story:build": "build-storybook",
     "test": "jest --watch",
     "prebuild": "yarn && preconstruct validate",
-    "build": "yarn build:babel && yarn build:cli && preconstruct build",
+    "build": "yarn build:babel && yarn build:cli && preconstruct build && yarn build:tokens",
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
-    "build:tokens": "wallace-cli tokens packages/styles/theme"
+    "build:tokens": "wallace-cli tokens packages/styles/theme",
+    "release": "changeset publish",
+    "commit": "cz"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -65,7 +72,9 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
