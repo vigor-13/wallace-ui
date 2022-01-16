@@ -22,14 +22,15 @@ const isCSSVariableTokenValue = (key: string, value: any): value is string =>
 const resolveTokenValue = (theme: Dict, value: string) => {
   if (value == null) return value;
 
+  let _value = value;
   const getVar = (val: string) => theme.__cssMap?.[val]?.varRef;
   const getValue = (val: string) => getVar(val) ?? val;
 
   const valueSplit = value.split(',').map((v) => v.trim());
   const [tokenValue, fallbackValue] = valueSplit;
-  value = getVar(tokenValue) ?? getValue(fallbackValue) ?? getValue(value);
+  _value = getVar(tokenValue) ?? getValue(fallbackValue) ?? getValue(value);
 
-  return value;
+  return _value;
 };
 
 // ???

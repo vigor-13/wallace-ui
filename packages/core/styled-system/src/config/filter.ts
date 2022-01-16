@@ -24,7 +24,7 @@ export const filter: Config = {
 };
 
 export interface FilterProps {
-  /****************************************************
+  /**
    * CSS `filter` property.
    * When set to `auto`, you allow Wallace UI to define
    * the color based on the filter style props
@@ -67,7 +67,7 @@ export interface FilterProps {
    */
   dropShadow?: Token<CSS.Property.BoxShadow, 'shadows'>;
 
-  /****************************************************
+  /**
    * CSS `backdrop-filter` property.
    * When set to `auto`, you allow Wallace UI to define
    * the color based on the backdrop filter style props

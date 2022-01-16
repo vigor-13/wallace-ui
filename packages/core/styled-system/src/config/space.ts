@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { Token, Length, t } from '../utils';
+import { Token, t } from '../utils';
 import { Config } from '../utils/prop-config';
 
 export const space: Config = {
@@ -57,7 +57,7 @@ Object.assign(space, {
 });
 
 export interface SpaceProps {
-  /*******************************************
+  /**
    * ### Margin on top, left, bottom and right
    */
   margin?: Token<CSS.Property.Margin | number, 'space'>;
@@ -66,7 +66,7 @@ export interface SpaceProps {
    */
   m?: Token<CSS.Property.Margin | number, 'space'>;
 
-  /******************************
+  /**
    * ### Margin on left and right
    */
   marginX?: Token<CSS.Property.Margin | number, 'space'>;
@@ -75,7 +75,7 @@ export interface SpaceProps {
    */
   mx?: Token<CSS.Property.Margin | number, 'space'>;
 
-  /******************************
+  /**
    * ### Margin on top and bottom
    */
   marginY?: Token<CSS.Property.Margin | number, 'space'>;
@@ -84,7 +84,7 @@ export interface SpaceProps {
    */
   my?: Token<CSS.Property.Margin | number, 'space'>;
 
-  /*******************
+  /**
    * ### Margin on top
    */
   marginTop?: Token<CSS.Property.MarginTop | number, 'space'>;
@@ -93,7 +93,7 @@ export interface SpaceProps {
    */
   mt?: Token<CSS.Property.Margin | number, 'space'>;
 
-  /**********************
+  /**
    * ### Margin on bottom
    */
   marginBottom?: Token<CSS.Property.MarginBottom | number, 'space'>;
@@ -102,7 +102,7 @@ export interface SpaceProps {
    */
   mb?: Token<CSS.Property.MarginBottom | number, 'space'>;
 
-  /********************
+  /**
    * ### Margin on left
    */
   marginLeft?: Token<CSS.Property.MarginLeft | number, 'space'>;
@@ -111,7 +111,7 @@ export interface SpaceProps {
    */
   ml?: Token<CSS.Property.MarginLeft | number, 'space'>;
 
-  /*********************
+  /**
    * ### Margin on right
    */
   marginRight?: Token<CSS.Property.MarginRight | number, 'space'>;
@@ -159,7 +159,7 @@ export interface SpaceProps {
    */
   marginInlineEnd?: Token<CSS.Property.MarginInlineEnd | number, 'space'>;
 
-  /********************************************
+  /**
    * ### Padding on top, left, bottom and right
    */
   padding?: Token<CSS.Property.Padding | number, 'space'>;
@@ -168,7 +168,7 @@ export interface SpaceProps {
    */
   p?: Token<CSS.Property.Padding | number, 'space'>;
 
-  /********************
+  /**
    * ### Padding on top
    */
   paddingTop?: Token<CSS.Property.PaddingTop | number, 'space'>;
@@ -177,7 +177,7 @@ export interface SpaceProps {
    */
   pt?: Token<CSS.Property.PaddingTop | number, 'space'>;
 
-  /***********************
+  /**
    * ### Padding on bottom
    */
   paddingBottom?: Token<CSS.Property.PaddingBottom | number, 'space'>;
@@ -186,7 +186,7 @@ export interface SpaceProps {
    */
   pb?: Token<CSS.Property.PaddingBottom | number, 'space'>;
 
-  /*********************
+  /**
    * ### Padding on left
    */
   paddingLeft?: Token<CSS.Property.PaddingLeft | number, 'space'>;
@@ -195,7 +195,7 @@ export interface SpaceProps {
    */
   pl?: Token<CSS.Property.PaddingLeft | number, 'space'>;
 
-  /**********************
+  /**
    * ### Padding on right
    */
   paddingRight?: Token<CSS.Property.PaddingRight | number, 'space'>;

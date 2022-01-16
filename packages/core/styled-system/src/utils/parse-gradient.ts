@@ -12,15 +12,15 @@ export const globalSet = new Set([
 ]);
 
 // ???
+// eslint-disable-next-line
 export function parseGradient(value: string | null | undefined, theme: Dict) {
   // TODO: ...
   return ``;
 }
 
 // ???
-export const isCSSFunction = (value: unknown) => {
-  return isString(value) && value.includes('(') && value.includes(')');
-};
+export const isCSSFunction = (value: unknown) =>
+  isString(value) && value.includes('(') && value.includes(')');
 
 // ???
 export const gradientTransform: Transform = (value, theme) =>

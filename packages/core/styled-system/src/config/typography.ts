@@ -34,6 +34,7 @@ export const typography: Config = {
           whiteSpace: 'nowrap',
         };
       }
+      return null;
     },
   },
 };

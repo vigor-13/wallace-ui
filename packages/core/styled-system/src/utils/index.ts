@@ -2,6 +2,7 @@ import { ThemeScale } from '../create-theme-vars';
 import { createTransform } from './create-transform';
 import { toConfig, logical, PropConfig } from './prop-config';
 import { transformFunctions as transforms } from './transform-functions';
+
 export * from './types';
 export { transforms };
 

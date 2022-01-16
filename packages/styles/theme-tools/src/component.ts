@@ -1,5 +1,6 @@
 import { SystemStyleObject } from '@wallace-ui/system';
 import { Dict } from '@wallace-ui/utils';
+
 export type { SystemStyleObject };
 
 /* --------------------------------------------------------------------------

@@ -22,6 +22,6 @@ const foundations = {
   zIndices,
 };
 
-type FoundationsType = typeof foundations;
+export type FoundationsType = typeof foundations;
 
 export default foundations;

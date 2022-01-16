@@ -1,6 +1,6 @@
+import { Dict, isObject } from '@wallace-ui/utils';
 import { Transform } from './types';
 import { ThemeScale } from '../create-theme-vars';
-import { Dict, isObject } from '@wallace-ui/utils';
 
 // ???
 interface CreateTransformOptions {

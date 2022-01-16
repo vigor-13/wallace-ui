@@ -29,14 +29,14 @@ const state = {
     `${str}:placeholder-shown ${post}`,
 };
 
+const merge = (fn: AnyFunction, ...selectors: string[]) =>
+  selectors.map(fn).join(', ');
+
 const toGroup = (fn: AnyFunction) =>
   merge((v) => fn(v, '&'), '[role=group]', '[data-group]', '.group');
 
 const toPeer = (fn: AnyFunction) =>
   merge((v) => fn(v, '~ &'), '[data-peer]', '.peer');
-
-const merge = (fn: AnyFunction, ...selectors: string[]) =>
-  selectors.map(fn).join(', ');
 
 export const pseudoSelectors = {
   /**

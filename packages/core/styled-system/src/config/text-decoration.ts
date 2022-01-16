@@ -14,7 +14,7 @@ export const textDecoration: Config = {
 };
 
 export interface TextDecorationProps {
-  /************************************
+  /**
    * ### CSS `text-decoration` property
    */
   textDecoration?: Token<CSS.Property.TextDecoration | number>;

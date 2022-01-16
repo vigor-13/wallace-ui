@@ -12,7 +12,7 @@ export const effect: Config = {
 };
 
 export interface EffectProps {
-  /***************************
+  /**
    * `box-shadow` property
    */
   boxShadow?: Token<CSS.Property.BoxShadow | number, 'shadows'>;
@@ -21,17 +21,17 @@ export interface EffectProps {
    */
   shadow?: Token<CSS.Property.BoxShadow | number, 'shadows'>;
 
-  /******************************
+  /**
    * `mix-blend-mode` proeprty
    */
   mixBlendMode?: Token<CSS.Property.MixBlendMode>;
 
-  /***********************
+  /**
    * `blend-mode` property
    */
   blendMode?: Token<CSS.Property.MixBlendMode>;
 
-  /**************************************
+  /**
    * CSS `background-blend-mode` property
    */
   backgroundBlendMode?: Token<CSS.Property.BackgroundBlendMode>;
@@ -40,7 +40,7 @@ export interface EffectProps {
    */
   bgBlendMode?: Token<CSS.Property.BackgroundBlendMode>;
 
-  /************************
+  /**
    * CSS `opacity` property
    */
   opacity?: Token<CSS.Property.Opacity>;

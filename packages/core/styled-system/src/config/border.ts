@@ -178,7 +178,7 @@ export interface BorderProps {
    */
   rounded?: Token<CSS.Property.BorderRadius | number, 'radii'>;
 
-  /***************************
+  /**
    * CSS `border-top` property
    */
   borderTop?: Token<CSS.Property.BorderTop | number, 'borders'>;
@@ -201,7 +201,7 @@ export interface BorderProps {
   borderEnd?: Token<CSS.Property.BorderInlineEnd | number>;
   borderInlineEnd?: Token<CSS.Property.BorderInlineEnd | number>;
 
-  /*********************************
+  /**
    * CSS `border-top-width` property
    */
   borderTopWidth?: Token<CSS.Property.BorderWidth | number>;
@@ -224,7 +224,7 @@ export interface BorderProps {
   borderEndWidth?: Token<CSS.Property.BorderWidth | number>;
   borderInlineEndWidth?: Token<CSS.Property.BorderInlineEndWidth | number>;
 
-  /*********************************
+  /**
    * CSS `border-top-style` property
    */
   borderTopStyle?: Token<CSS.Property.BorderTopStyle>;
@@ -247,7 +247,7 @@ export interface BorderProps {
   borderEndStyle?: Token<CSS.Property.BorderInlineEndStyle>;
   borderInlineEndStyle?: Token<CSS.Property.BorderInlineEndStyle>;
 
-  /*********************************
+  /**
    * CSS `border-top-color` property
    */
   borderTopColor?: Token<CSS.Property.BorderTopColor, 'colors'>;
@@ -270,7 +270,7 @@ export interface BorderProps {
   borderEndColor?: Token<CSS.Property.BorderInlineEndColor, 'colors'>;
   borderInlineEndColor?: Token<CSS.Property.BorderInlineEndColor, 'colors'>;
 
-  /**********************************
+  /**
    * CSS `border-top-radius` property
    */
   borderTopRadius?: Token<CSS.Property.BorderRadius | number, 'radii'>;
@@ -303,7 +303,7 @@ export interface BorderProps {
    */
   roundedRight?: Token<CSS.Property.BorderRadius | number, 'radii'>;
 
-  /***************************************************************************
+  /**
    * When direction is `ltr`, `roundedEnd` is equivalent to `borderRightRadius`.
    * When direction is `rtl`, `roundedEnd` is equivalent to `borderLeftRadius`.
    */
@@ -334,7 +334,7 @@ export interface BorderProps {
    */
   borderInlineStartRadius?: Token<CSS.Property.BorderRadius | number, 'radii'>;
 
-  /********************************
+  /**
    * CSS `border-top-left-radius` property
    */
   borderTopLeftRadius?: Token<CSS.Property.BorderRadius | number, 'radii'>;
@@ -382,7 +382,7 @@ export interface BorderProps {
   roundedBottomRight?: Token<CSS.Property.BorderRadius | number, 'radii'>;
   roundedBottomEnd?: Token<CSS.Property.BorderRadius | number, 'radii'>;
 
-  /*******************************************
+  /**
    * CSS `border-right & border-left` property
    */
   borderX?: Token<CSS.Property.Border | number, 'borders'>;

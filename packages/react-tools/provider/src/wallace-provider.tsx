@@ -41,17 +41,10 @@ export interface WallaceProviderProps
 
 /**
  * The global provider that must be added to make all Wallace components work correctly.
+ *
  */
 export const WallaceProvider: React.FC<WallaceProviderProps> = (props) => {
-  const {
-    children,
-    colorModeManager,
-    portalZindex,
-    resetCSS = true,
-    theme = {},
-    environment,
-    cssVarsRoot,
-  } = props;
+  const { children, resetCSS = true, theme = {}, cssVarsRoot } = props;
 
   /**
    *  *TODO: 미구현...

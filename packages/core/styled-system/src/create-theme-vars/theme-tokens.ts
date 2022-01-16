@@ -42,7 +42,7 @@ export function extractTokens(theme: Dict) {
 
 /**
  * 테마 객체에서 변환된 CSS 변수를 제거한다.
- * 
+ *
  * 예를 들어 다음과 같은 프로퍼티 들을 제거한다.
  * @example __cssMap, __cssVars, __breakpoints
  */

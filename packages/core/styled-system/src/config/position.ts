@@ -33,32 +33,32 @@ Object.assign(position, {
 });
 
 export interface PositionProps {
-  /****************************
+  /**
    * ### CSS `z-index` property
    */
   zIndex?: Token<CSS.Property.ZIndex, 'zIndices'>;
 
-  /************************
+  /**
    * ### CSS `top` property
    */
   top?: Token<CSS.Property.Top | number, 'sizes'>;
 
-  /***************************
+  /**
    * ### CSS `bottom` property
    */
   bottom?: Token<CSS.Property.Bottom | number, 'sizes'>;
 
-  /*************************
+  /**
    * ### CSS `left` property
    */
   left?: Token<CSS.Property.Left | number, 'sizes'>;
 
-  /**************************
+  /**
    * ### CSS `right` property
    */
   right?: Token<CSS.Property.Right | number, 'sizes'>;
 
-  /***************************************************
+  /**
    * ### CSS `left`, `right`, `top`, `bottom` property
    */
   inset?: Token<CSS.Property.Inset | number, 'sizes'>;
@@ -95,7 +95,7 @@ export interface PositionProps {
    */
   insetY?: Token<CSS.Property.Inset | number, 'sizes'>;
 
-  /*****************************
+  /**
    * ### CSS `position` property
    */
   pos?: Token<CSS.Property.Position>;

@@ -15,29 +15,6 @@ export interface ThemeVars {
   cssMap: Dict;
 }
 
-/**
- * 테마 객체와 접두어를 받아서 CSS var를 생성한다.
- *
- * @see [MDN Reference - var()](https://developer.mozilla.org/ko/docs/Web/CSS/var())
- */
-export function createThemeVars(target: Dict, options: CreateThemeVarsOptions) {
-  const context: ThemeVars = {
-    cssMap: {},
-    cssVars: {},
-  };
-
-  walkObject(target, (value, path) => {
-    const [firstKey] = path;
-    const handler = tokenHandlerMap[firstKey] ?? tokenHandlerMap.defaultHandler;
-    const { cssVars, cssMap } = handler(path, value, options);
-
-    Object.assign(context.cssVars, cssVars);
-    Object.assign(context.cssMap, cssMap);
-  });
-
-  return context;
-}
-
 // ???
 type TokenHandler = (
   keys: string[],
@@ -97,3 +74,26 @@ const tokenHandlerMap: Partial<Record<ThemeScale, TokenHandler>> & {
     };
   },
 };
+
+/**
+ * 테마 객체와 접두어를 받아서 CSS var를 생성한다.
+ *
+ * @see [MDN Reference - var()](https://developer.mozilla.org/ko/docs/Web/CSS/var())
+ */
+export function createThemeVars(target: Dict, options: CreateThemeVarsOptions) {
+  const context: ThemeVars = {
+    cssMap: {},
+    cssVars: {},
+  };
+
+  walkObject(target, (value, path) => {
+    const [firstKey] = path;
+    const handler = tokenHandlerMap[firstKey] ?? tokenHandlerMap.defaultHandler;
+    const { cssVars, cssMap } = handler(path, value, options);
+
+    Object.assign(context.cssVars, cssVars);
+    Object.assign(context.cssMap, cssMap);
+  });
+
+  return context;
+}

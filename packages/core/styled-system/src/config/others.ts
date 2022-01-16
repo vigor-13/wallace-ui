@@ -1,7 +1,6 @@
-import * as CSS from 'csstype';
+import { memoizedGet as get } from '@wallace-ui/utils';
 import { Token, ResponsiveValue } from '../utils';
 import { Config } from '../utils/prop-config';
-import { memoizedGet as get } from '@wallace-ui/utils';
 
 // ???
 const srOnly = {

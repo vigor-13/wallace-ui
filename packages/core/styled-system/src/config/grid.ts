@@ -1,5 +1,5 @@
 import * as CSS from 'csstype';
-import { Token, Length, t } from '../utils';
+import { Token, t } from '../utils';
 import { Config } from '../utils/prop-config';
 
 export const grid: Config = {
@@ -23,7 +23,7 @@ export const grid: Config = {
 };
 
 export interface GridProps {
-  /********************************
+  /**
    * ### CSS `grid-column` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
@@ -36,7 +36,7 @@ export interface GridProps {
    */
   gridRow?: Token<CSS.Property.GridRow>;
 
-  /*****************************
+  /**
    * ### CSS `grid-gap` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap)
@@ -55,7 +55,7 @@ export interface GridProps {
    */
   gridRowGap?: Token<CSS.Property.GridRowGap | number, 'space'>;
 
-  /***********************************
+  /**
    * ### CSS `grid-row-start` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start)
@@ -80,7 +80,7 @@ export interface GridProps {
    */
   gridColumnEnd?: Token<CSS.Property.GridColumnEnd>;
 
-  /***********************************
+  /**
    * ### CSS `grid-auto-flow` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
@@ -99,7 +99,7 @@ export interface GridProps {
    */
   gridAutoRows?: Token<CSS.Property.GridAutoRows>;
 
-  /**********************************
+  /**
    * ### CSS `grid-template` property
    * It is a shorthand property for defining grid columns, rows, and areas.
    *

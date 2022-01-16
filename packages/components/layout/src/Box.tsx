@@ -1,4 +1,3 @@
-import React from 'react';
 import { __DEV__ } from '@wallace-ui/utils';
 import { HTMLWallaceProps, wallace } from '@wallace-ui/system';
 

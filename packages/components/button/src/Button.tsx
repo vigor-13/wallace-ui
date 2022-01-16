@@ -35,8 +35,8 @@ export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
   const { children, isDisabled, as, isActive, ...rest } = omitThemingProps(props);
   const styles = useStyleConfig('Button', { ...props });
 
-  const buttonStyles: SystemStyleObject = React.useMemo(() => {
-    return {
+  const buttonStyles: SystemStyleObject = React.useMemo(
+    () => ({
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -47,11 +47,13 @@ export const Button = forwardRef<ButtonProps, 'button'>((props, ref) => {
       verticalAlign: 'middle',
       outline: 'none',
       ...styles,
-    };
-  }, [styles]);
+    }),
+    [styles]
+  );
 
   return (
     <wallace.button
+      ref={ref}
       className='wallace-button'
       __css={buttonStyles}
       as={as}

@@ -22,7 +22,7 @@ export const flexbox: Config = {
 };
 
 export interface FlexboxProps {
-  /**************************
+  /**
    * ### CSS `flex` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/flex)
@@ -71,7 +71,7 @@ export interface FlexboxProps {
    */
   flexShrink?: Token<CSS.Property.FlexShrink | (string & number)>;
 
-  /*********************************
+  /**
    * ### CSS `align-items` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/align-items)
@@ -84,7 +84,7 @@ export interface FlexboxProps {
    */
   alignContent?: Token<CSS.Property.AlignContent>;
 
-  /************************************
+  /**
    * ### CSS `justify-items` property
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/justify-items)
@@ -97,7 +97,7 @@ export interface FlexboxProps {
    */
   justifyContent?: Token<CSS.Property.JustifyContent>;
 
-  /*************************************
+  /**
    * ### CSS `justify-self` property.
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/flex-flow)
@@ -110,7 +110,7 @@ export interface FlexboxProps {
    */
   alignSelf?: Token<CSS.Property.AlignSelf>;
 
-  /*************************************
+  /**
    * ### CSS `place-items` property.
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/place-items)
@@ -133,7 +133,7 @@ export interface FlexboxProps {
    */
   placeSelf?: Token<CSS.Property.PlaceSelf>;
 
-  /*************************************
+  /**
    * ### CSS `gap` property.
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/gap)
@@ -152,14 +152,14 @@ export interface FlexboxProps {
    */
   columnGap?: Token<CSS.Property.ColumnGap<Length>, 'space'>;
 
-  /**************************************
+  /**
    * ### CSS `order` property.
    *
    * @see [Mozilla Docs](https://developer.mozilla.org/docs/Web/CSS/order)
    */
   order?: Token<CSS.Property.Order>;
 
-  /************************************************
+  /**
    * Controls the horizontal space between elements
    */
   experimental_spaceX?: Token<CSS.Property.Margin | number, 'space'>;

@@ -24,7 +24,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   return (
     <EmotionThemeProvider theme={computedTheme}>
-      <Global styles={(theme: any) => ({ [cssVarsRoot]: theme.__cssVars })} />
+      <Global styles={(_theme: any) => ({ [cssVarsRoot]: _theme.__cssVars })} />
       {children}
     </EmotionThemeProvider>
   );

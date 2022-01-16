@@ -39,7 +39,7 @@ export interface InteractivityProps {
    */
   cursor?: Token<CSS.Property.Cursor>;
 
-  /*****************************
+  /**
    * ### CSS `outline` property
    */
   outline?: Token<CSS.Property.Outline<Length>>;

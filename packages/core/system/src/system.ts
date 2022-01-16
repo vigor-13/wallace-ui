@@ -1,16 +1,16 @@
+import React from 'react';
 import _styled, { CSSObject, FunctionInterpolation } from '@emotion/styled';
 import {
   SystemStyleObject,
   StyleProps,
   isStyleProp,
 } from '@wallace-ui/styled-system';
-import { Dict, filterUndefined, objectFilter, runIfFn } from '@wallace-ui/utils';
+import { filterUndefined, objectFilter, runIfFn } from '@wallace-ui/utils';
+import { css } from '@wallace-ui/styled-system/src/css';
 import { As, WallaceComponent, PropsOf } from './system.types';
 import { DOMElement, domElements } from './system.utils';
 import { shouldForwardProp } from './should-forward-prop';
-import React from 'react';
 import { WallaceProps } from '.';
-import { css } from '@wallace-ui/styled-system/src/css';
 
 /**
  * ### [Type] HTMLWallaceProps
