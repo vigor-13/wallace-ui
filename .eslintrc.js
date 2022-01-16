@@ -17,22 +17,16 @@ module.exports = {
     'plugin:storybook/recommended',
     'prettier',
   ],
+  ignorePatterns: ['.eslintrc.js', 'commitlint.config.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 13,
     ecmaFeatures: {
       jsx: true,
     },
+    project: 'tsconfig.json',
   },
   plugins: ['prettier', 'react', '@typescript-eslint'],
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parserOptions: {
-        project: ['tsconfig.json'],
-      },
-    },
-  ],
   rules: {
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'off',
