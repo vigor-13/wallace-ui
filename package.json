@@ -60,7 +60,7 @@
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
     "build:tokens": "wallace-cli tokens packages/styles/theme",
-    "release": "changeset publish"
+    "release": "yarn semantic-release"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -79,7 +79,10 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@manypkg/cli": "^0.19.1",
     "@preconstruct/cli": "^2.1.5",
+    "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/github": "^8.0.2",
+    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@storybook/addon-actions": "^6.4.1",
     "@storybook/addon-essentials": "^6.4.1",
     "@storybook/addon-links": "^6.4.1",
