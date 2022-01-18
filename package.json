@@ -60,7 +60,7 @@
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
     "build:tokens": "wallace-cli tokens packages/styles/theme",
-    "release": "yarn semantic-release -e semantic-release-monorepo"
+    "release": "yarn workspace run semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "react": "^17.0.2",
