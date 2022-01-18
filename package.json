@@ -60,7 +60,7 @@
     "build:babel": "yarn pkg babel-plugin build",
     "build:cli": "yarn pkg cli build",
     "build:tokens": "wallace-cli tokens packages/styles/theme",
-    "release": "yarn multi-semantic-release"
+    "release": "yarn semantic-release -e semantic-release-monorepo"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -114,6 +114,7 @@
     "lint-staged": "^12.1.7",
     "prettier": "^2.5.0",
     "semantic-release": "^18.0.1",
+    "semantic-release-monorepo": "^7.0.5",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   }
