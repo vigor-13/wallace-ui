@@ -13,6 +13,6 @@
     "declaration": true,
     "declarationMap": true
   },
-  "include": ["packages", "tools"],
+  "include": ["packages", "tools", "scripts"],
   "exclude": ["node_modules"]
 }

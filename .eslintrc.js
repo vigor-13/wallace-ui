@@ -38,6 +38,7 @@ module.exports = {
     'prefer-object-spread': 'off',
     'no-restricted-exports': 'off',
     'import/no-cycle': 'off',
+    'class-methods-use-this': 'off',
 
     /*
      * Typescript riles
