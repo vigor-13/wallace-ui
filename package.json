@@ -73,6 +73,7 @@
     "@changesets/pre": "^1.0.9",
     "@changesets/read": "^0.5.3",
     "@changesets/types": "^4.0.2",
+    "@manypkg/cli": "^0.19.1",
     "@manypkg/get-packages": "^1.1.3",
     "lodash": "^4.17.21",
     "prettier": "^2.5.1",

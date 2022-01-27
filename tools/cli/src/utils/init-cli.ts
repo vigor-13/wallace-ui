@@ -27,6 +27,6 @@ export async function initCLI() {
   UpdateNotifier({
     pkg: packageJSON,
     shouldNotifyInNpmScript: true,
-    updateCheckInterval: 1000 * 60 * 60 * 24 * 3, //3 days
+    updateCheckInterval: 1000 * 60 * 60 * 24 * 3, // 3 days
   }).notify({ isGlobal: true });
 }

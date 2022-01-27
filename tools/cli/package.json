@@ -23,6 +23,7 @@
     "dev": "node bin/index.js"
   },
   "dependencies": {
+    "@wallace-ui/utils": "0.1.0",
     "chalk": "^4.0.0",
     "cli-check-node": "^1.3.4",
     "cli-handle-unhandled": "^1.1.1",
