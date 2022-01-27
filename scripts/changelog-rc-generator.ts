@@ -51,7 +51,7 @@ class ChangelogRCGenerator {
     const month = padStart((data.getMonth() + 1).toString(), 2, '0');
     const year = data.getFullYear();
 
-    return `## ${year}-${month}-${day}`;
+    return `## 📅 ${year}-${month}-${day}`;
   };
 
   private getPackageName = (name: string) =>
