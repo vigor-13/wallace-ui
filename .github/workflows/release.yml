@@ -3,8 +3,8 @@ name: Release Workflow
 on:
   push:
     paths:
-      # - '.changeset/**'
-      # - '!.changeset/.changelogrc'
+      - '.changeset/**'
+      - '!.changeset/.changelogrc'
       - 'tools/**'
       - 'packages/**'
     branches:
