@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/theme-tools",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Set of helpers that makes theming and styling easier",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -16,10 +16,10 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@wallace-ui/system": ">=0.1.0"
+    "@wallace-ui/system": ">=0.1.1"
   },
   "dependencies": {
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/utils": "0.1.0"
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/utils": "0.1.1"
   }
 }

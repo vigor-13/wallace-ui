@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/styled-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Style function for css-in-js building component libraries",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@wallace-ui/utils": "0.1.0",
+    "@wallace-ui/utils": "0.1.1",
     "csstype": "^3.0.10"
   }
 }

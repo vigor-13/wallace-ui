@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Theme and components agnostic WallaceProvider",
   "author": "Kimm kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@wallace-ui/reset-css": "0.1.0",
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/utils": "0.1.0"
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/utils": "0.1.1"
   }
 }

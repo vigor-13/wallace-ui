@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/theme",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The default theme for Wallace UI components",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -16,9 +16,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@wallace-ui/styled-system": "0.1.0",
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/theme-tools": "0.1.0",
-    "@wallace-ui/utils": "0.1.0"
+    "@wallace-ui/styled-system": "0.1.1",
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/theme-tools": "0.1.1",
+    "@wallace-ui/utils": "0.1.1"
   }
 }

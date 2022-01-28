@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wallace UI system primitives",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -21,8 +21,8 @@
     "react": ">=16.8.6"
   },
   "dependencies": {
-    "@wallace-ui/styled-system": "0.1.0",
-    "@wallace-ui/utils": "0.1.0",
+    "@wallace-ui/styled-system": "0.1.1",
+    "@wallace-ui/utils": "0.1.1",
     "react-fast-compare": "^3.2.0"
   },
   "devDependencies": {
