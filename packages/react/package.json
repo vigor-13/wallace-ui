@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Responsive and accessible React UI components built with React and Emotion",
   "author": "Kim kiwoon<kkw5796@gmail.com>",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "react-dom": ">=16.8.6"
   },
   "dependencies": {
-    "@wallace-ui/button": "0.1.0",
+    "@wallace-ui/button": "0.1.1",
     "@wallace-ui/layout": "0.1.0",
     "@wallace-ui/provider": "0.1.0",
     "@wallace-ui/reset-css": "0.1.0",
