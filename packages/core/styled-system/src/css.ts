@@ -7,7 +7,7 @@ import {
   mergeWith as merge,
 } from '@wallace-ui/utils';
 import * as CSS from 'csstype';
-import { StyleObjectOrFn } from '.';
+import { StyleObjectOrFn } from './system.types';
 import { pseudoSelectors } from './pseudos';
 import { systemProps as systemPropConfigs } from './system';
 import { CssTheme } from './utils';

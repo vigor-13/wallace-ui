@@ -1,5 +1,4 @@
-import { Dict } from '@wallace-ui/utils';
-import { walkObject } from '@wallace-ui/utils/src/walk-object';
+import { Dict, walkObject } from '@wallace-ui/utils';
 import { ThemeScale } from './theme-tokens';
 import { cssVar } from './css-var';
 import { calc, Operand } from './calc';

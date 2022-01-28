@@ -21,12 +21,12 @@
     "react": ">=16.8.6"
   },
   "dependencies": {
-    "@emotion/styled": "^11.6.0",
     "@wallace-ui/styled-system": "0.1.0",
     "@wallace-ui/utils": "0.1.0",
     "react-fast-compare": "^3.2.0"
   },
   "devDependencies": {
-    "@emotion/react": "^11.7.0"
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0"
   }
 }

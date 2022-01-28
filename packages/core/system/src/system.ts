@@ -4,9 +4,9 @@ import {
   SystemStyleObject,
   StyleProps,
   isStyleProp,
+  css,
 } from '@wallace-ui/styled-system';
 import { filterUndefined, objectFilter, runIfFn } from '@wallace-ui/utils';
-import { css } from '@wallace-ui/styled-system/src/css';
 import { As, WallaceComponent, PropsOf } from './system.types';
 import { DOMElement, domElements } from './system.utils';
 import { shouldForwardProp } from './should-forward-prop';

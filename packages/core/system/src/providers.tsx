@@ -6,8 +6,7 @@ import {
   ThemeProviderProps as EmotionThemeProviderProps,
 } from '@emotion/react';
 import { Dict } from '@wallace-ui/utils';
-import { WithCSSVar } from '@wallace-ui/styled-system/src/utils';
-import { toCSSVar } from '@wallace-ui/styled-system';
+import { WithCSSVar, toCSSVar } from '@wallace-ui/styled-system';
 
 // ???
 export interface ThemeProviderProps extends EmotionThemeProviderProps {

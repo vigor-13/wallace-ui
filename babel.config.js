@@ -1,9 +1,7 @@
 module.exports = {
-  plugins: [
-    '@wallace-ui/babel-plugin',
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-  ],
   presets: [
+    '@babel/preset-typescript',
+    '@babel/preset-react',
     [
       '@babel/preset-env',
       {
@@ -11,7 +9,5 @@ module.exports = {
         loose: true,
       },
     ],
-    '@babel/preset-typescript',
-    '@babel/preset-react',
   ],
 };
