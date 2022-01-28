@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/layout",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Wallace UI layout components",
   "author": "Kim kiwoon <kkw5796@gmail.com>",
   "license": "MIT",
@@ -16,11 +16,11 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@wallace-ui/system": ">=0.1.0",
+    "@wallace-ui/system": ">=0.1.1",
     "react": "^16.8.6"
   },
   "dependencies": {
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/utils": "0.1.0"
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/utils": "0.1.1"
   }
 }

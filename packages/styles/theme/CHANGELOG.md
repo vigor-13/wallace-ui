@@ -1,6 +1,6 @@
-# @wallace-ui/button
+# @wallace-ui/theme
 
-## 0.1.2
+## 0.1.1
 
 ### Patch Changes
 
@@ -8,10 +8,4 @@
   - @wallace-ui/styled-system@0.1.1
   - @wallace-ui/system@0.1.1
   - @wallace-ui/utils@0.1.1
-  - @wallace-ui/layout@0.1.1
-
-## 0.1.1
-
-### Patch Changes
-
-- dc90c96: delete @wallace-ui/test-utils from dependency
+  - @wallace-ui/theme-tools@0.1.1

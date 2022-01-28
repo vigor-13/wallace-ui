@@ -1,6 +1,6 @@
 {
   "name": "create-react-app-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^1.8.1",
@@ -13,11 +13,11 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
-    "@wallace-ui/react": "0.1.1",
+    "@wallace-ui/react": "0.1.2",
     "@wallace-ui/reset-css": "0.1.0",
-    "@wallace-ui/styled-system": "0.1.0",
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/utils": "0.1.0",
+    "@wallace-ui/styled-system": "0.1.1",
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/utils": "0.1.1",
     "framer-motion": "^5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

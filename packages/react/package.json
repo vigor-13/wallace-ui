@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Responsive and accessible React UI components built with React and Emotion",
   "author": "Kim kiwoon<kkw5796@gmail.com>",
   "license": "MIT",
@@ -22,13 +22,13 @@
     "react-dom": ">=16.8.6"
   },
   "dependencies": {
-    "@wallace-ui/button": "0.1.1",
-    "@wallace-ui/layout": "0.1.0",
-    "@wallace-ui/provider": "0.1.0",
+    "@wallace-ui/button": "0.1.2",
+    "@wallace-ui/layout": "0.1.1",
+    "@wallace-ui/provider": "0.1.1",
     "@wallace-ui/reset-css": "0.1.0",
-    "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/theme": "0.1.0",
-    "@wallace-ui/utils": "0.1.0"
+    "@wallace-ui/system": "0.1.1",
+    "@wallace-ui/theme": "0.1.1",
+    "@wallace-ui/utils": "0.1.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.4.0",
