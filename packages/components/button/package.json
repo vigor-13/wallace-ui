@@ -23,7 +23,6 @@
     "@wallace-ui/layout": "0.1.0",
     "@wallace-ui/styled-system": "0.1.0",
     "@wallace-ui/system": "0.1.0",
-    "@wallace-ui/test-utils": "0.1.0",
     "@wallace-ui/utils": "0.1.0"
   }
 }
