@@ -9,3 +9,9 @@
   - 🛠 Refactor
 
 <!-- CHANGELOG:INSERT -->
+
+## 📅 2022-01-28
+
+**Button** `v0.1.1`
+
+- delete @wallace-ui/test-utils from dependency

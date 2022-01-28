@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/babel-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mark custom forwardRef and memo as pure for the shaking",
   "license": "MIT",
   "main": "dist/index.js",

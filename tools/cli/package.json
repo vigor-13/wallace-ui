@@ -1,6 +1,6 @@
 {
   "name": "@wallace-ui/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate Typescript types to provide autocomplete for your custom theme.",
   "keywords": [],
   "author": "",

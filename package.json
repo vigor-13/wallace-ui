@@ -11,7 +11,8 @@
     "packages/components/*",
     "packages/react-tools/*",
     "packages/styles/*",
-    "tools/*"
+    "tools/*",
+    "examples/*"
   ],
   "preconstruct": {
     "packages": [

@@ -17,7 +17,7 @@ module.exports = {
     'plugin:storybook/recommended',
     'prettier',
   ],
-  ignorePatterns: ['.eslintrc.js', 'commitlint.config.js'],
+  ignorePatterns: ['.eslintrc.js', 'commitlint.config.js', 'babel.config.js'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 13,
